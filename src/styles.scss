@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
+
+
+
+html {
+    box-sizing: border-box;
+  }
+  
+*,
+*:after,
+*:before {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+}
+
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+// Media breakpoint
+
+$breakpoints: (
+  small: 375px,
+  medium: 699px,
+  large: 1140px,
+);
+
+
+@mixin breakpoint($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin breakpoint-less($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+  @media screen and (max-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+// button
+
+.btn, button {
+    text-decoration: none;
+    background-color: #2ea44f;
+    border: 1px solid #2ea44f;
+    border-radius: 5px;
+    width: 85px;
+    height: 35px;
+    font-weight: 600;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: all 150ms ease-in-out;
+
+    @include breakpoint(medium) {
+        width: 90px;
+        height: 40px;
+    }
+
+    &:hover {
+        background-color: rgb(73, 231, 112);
+        color: #2ea44f;
+    }
+}
+
+
+// Input field
+.input, #input, input {
+  border: 2px solid #2ea44f;
+  border-radius: 5px;
+  width: 300px;
+  height: 35px;
+  padding: 5px;
+  outline: none;
+  font-family: inherit;
+
+  &:hover {
+    border-color: #2ea44f;
+  }
+
+  &:focus {
+    border-color: #2ea44f;
+    border: 3px solid #2ea44f;
+  }
+}
