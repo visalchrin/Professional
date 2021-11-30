@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'hello', component: NavigatorComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent},
+  { path: 'feed', component: FeedComponent}
 ]
 
 
