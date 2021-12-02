@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FeedComponent } from './components/feed/feed.component';
+import { BsModalService } from 'ngx-bootstrap/modal';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -38,9 +40,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     TooltipModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

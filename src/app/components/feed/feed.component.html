@@ -1,5 +1,28 @@
-<div class="newpost">
-    <h1>This is the section for creating new post.</h1>
+
+<!-- end test -->
+<div class="newpost" (click)="openModal(template)">
+    <div class="newpost-owner">
+        <div class="post-owner-profile">
+            <img src="../../../assets/hero_image.jpg" alt="user-profile">
+            <div>
+                <h5>user profile name</h5>
+            </div>
+        </div>
+        <div class="newpost-owner-input">
+            <input type="text" placeholder="What do you want to share?">
+        </div>
+    </div>
+    <ng-template #template class="new">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Modal</h4>
+          <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Hello world
+        </div>
+      </ng-template>
 </div>
 
 <div class="posts">
@@ -13,7 +36,6 @@
                     <h6> on 2021-11-10 @2:30AM </h6>
                 </div>
             </div>
-            
         </div>
         <div class="post-content">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati veniam porro minima et enim at necessitatibus itaque? Eum dolor qui cum maiores dolorum dolore est, labore laborum architecto quis distinctio?

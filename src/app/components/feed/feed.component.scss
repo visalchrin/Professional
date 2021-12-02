@@ -1,6 +1,25 @@
+.new {
+    margin-top: 200px;
+}
+
 .newpost {
     padding-top: 100px;
-    color: green;
+    max-width: 500px;
+    margin: 0 auto;
+    &-owner {
+        padding: 10px;
+        background-color: aliceblue;
+        border-radius: 10px;
+
+        &-input {
+            display: grid;
+            place-items: center;
+            align-items: center;
+            input {
+                width: 400px;
+            }
+        }
+    }
 }
 
 .posts {
@@ -9,6 +28,7 @@
 }
 
 .post {
+    background-color: rgba(245, 245, 245, 0.9);
     border-radius: 10px;
     border: 2px solid gainsboro;
     margin-top: 20px;
