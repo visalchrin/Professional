@@ -4,6 +4,16 @@
     margin-top: 200px;
 }
 
+.modal-body {
+
+    #textarea {
+        @include breakpoint-less(medium) {
+            width: 275px;
+            height: 200px;
+        }
+    }
+}
+
 .newpost {
     padding-top: 100px;
     max-width: 500px;
@@ -19,11 +29,12 @@
             align-items: center;
             input {
                 width: 400px;
+
+                @include breakpoint-less(medium) {
+                    width: 275px;
+                }
             }
 
-            @include breakpoint-less(medium) {
-                width: 275px;
-            }
         }
     }
 }
