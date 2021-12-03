@@ -1,3 +1,4 @@
+import { NewsCareerComponent } from './components/News-Career/news-career.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +28,8 @@ const routes: Routes = [
     NavigatorComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    NewsCareerComponent,
   ],
   imports: [
     BrowserModule,
