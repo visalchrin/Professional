@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.btn, button {
+  text-decoration: none;
+  background-color: #2ea44f;
+  border: 1px solid #2ea44f;
+  border-radius: 5px;
+  width: 85px;
+  height: 35px;
+  font-weight: 600;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  transition: all 150ms ease-in-out;
+}
+@media screen and (min-width: 699px) {
+  .btn, button {
+    width: 90px;
+    height: 40px;
+  }
+}
+.btn:hover, button:hover {
+  background-color: #49e770;
+  color: #2ea44f;
+}
+
+.input, #input, input {
+  border: 2px solid #2ea44f;
+  border-radius: 5px;
+  width: 300px;
+  height: 35px;
+  padding: 5px;
+  outline: none;
+  font-family: inherit;
+}
+.input:hover, #input:hover, input:hover {
+  border-color: #2ea44f;
+}
+.input:focus, #input:focus, input:focus {
+  border-color: #2ea44f;
+  border: 3px solid #2ea44f;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+}
+.header-active {
+  border-bottom: 2px solid #2188ff;
+}
+@media screen and (min-width: 699px) {
+  .header ul .hide-desktop {
+    display: none;
+  }
+  .header .hide-desktop {
+    display: none;
+  }
+}
+@media screen and (max-width: 699px) {
+  .header ul li {
+    display: none;
+  }
+  .header ul li:last-child {
+    margin-left: auto;
+  }
+  .header ul li:first-child {
+    display: block;
+  }
+}
+.header-navbar {
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #fff;
+  height: 55px;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  list-style: none;
+  align-items: center;
+}
+.header-navbar-item a {
+  text-decoration: none;
+  color: #524a4a;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.header-navbar-item a:hover {
+  color: green;
+  font-weight: 600;
+  border-bottom: 2px solid #2188ff;
+}
+.header .menuBtn {
+  width: 30px;
+  height: 30px;
+}
+.header .mobile-menu {
+  display: none;
+}
+.header .show-mobile {
+  transition: all 150ms ease-in-out;
+  display: block;
+  list-style: none;
+  padding: 20px;
+}
+@media screen and (min-width: 699px) {
+  .header .show-mobile {
+    display: none;
+  }
+}
+.header .show-mobile li {
+  margin-top: 10px;
+  padding-left: 5px;
+}
+.header .show-mobile li a {
+  padding-left: 5px;
+}
+.header .show-mobile li a:hover, .header .show-mobile li .active {
+  border-bottom: none;
+  border-left: 2px solid #2188ff;
+}
+.header .show-mobile li button {
+  width: 100%;
+}

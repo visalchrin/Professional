@@ -11,13 +11,15 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { trendyComponent } from './components/trendy/trendy.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'hello', component: NavigatorComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent},
+  { path: 'trendy', component: trendyComponent}
 ]
 
 
@@ -27,7 +29,8 @@ const routes: Routes = [
     NavigatorComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    trendyComponent
   ],
   imports: [
     BrowserModule,
