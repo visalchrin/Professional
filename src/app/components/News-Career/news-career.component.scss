@@ -5,7 +5,7 @@ section{
 .Container{
     width: 100%;
     height: 800px;
-    background-color: aquamarine;
+    background-color: #24292f;
     display: flex;
     align-items: center;
 }
@@ -15,7 +15,8 @@ section{
     background-color: rgb(255, 255, 255);
     position: absolute;
     left: 21%;
-    box-shadow: 5px 10px 8px #ccc;
+    box-shadow: 5px 6px  8px rgb(167, 158, 158);
+    border-radius: 10px;
     
 }
 
@@ -24,6 +25,7 @@ section{
     padding-top: 10px;
     color: #377D39;
     font-weight: bold;
+    cursor: default;
 }
 
 .LatestPost h1{
@@ -31,6 +33,7 @@ section{
     padding-left: 17%;
     text-decoration: underline;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: default;
 }
 
 .card-content{
@@ -51,7 +54,58 @@ section{
 .pg h5{
     padding-left: 10px;
 }
+.pg:hover{
+    cursor: pointer;
+}
 
 .pg:hover img{
     transform: scale(1.2);
 }
+
+.body-container{
+    background-color: #32CD32;
+    width: 100%;
+    height: 900px;
+}
+
+.body-container h1{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: red;
+    width: 280px;
+}
+
+.title-NewsCareer{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(230, 225, 225);
+    box-shadow: 5px 4px 8px black;
+    display: flex;
+    align-items: center;
+}
+.title-NewsCareer h1{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   text-decoration: underline;
+   font-size: 40px;
+   padding-left: 50px;
+   cursor: default;
+}
+
+.News-Content{
+    width: 100%;
+    height: 1000px;
+    background-color: #24292f;
+}
+
+.card-News{
+    padding-left: 30px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-News h5{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-seri;
+}
+.card-News p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
