@@ -4,7 +4,7 @@
 
 .card {
   width: 1000px;
-  height: 200px;
+  height: 180px;
   position: center;
   display: inline-block;
   border-radius: 10px;
@@ -12,6 +12,8 @@
   box-sizing: border-box;
   cursor: pointer;
   margin: 10px 15px;
+  margin-top: 70px;
+  margin-left: 450px;
   background-position: center;
   background-size: cover;
 }
