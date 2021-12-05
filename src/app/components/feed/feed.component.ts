@@ -8,7 +8,6 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class FeedComponent implements OnInit {
   modalRef?: BsModalRef;
-  likeBtnColor : String = "currentColor";
   // constructor() { }
   constructor(private modalService: BsModalService) {
     
@@ -24,13 +23,17 @@ export class FeedComponent implements OnInit {
     this.modalRef = this.modalService.show(template);
   }
 
-  onClickLike(): void {
-    console.log(this.likeBtnColor);
-    if (this.likeBtnColor === "orange") {
-      this.likeBtnColor = "currentColor";
-    } else {
-      this.likeBtnColor = "orange";
+  onClickLike(id: string): void {
+    const element = document.getElementById(`${id}`);
+    if (element != null) {
+      if (element.style.color === 'orange') {
+        element.style.color = 'black';
+      } else {
+        element.style.color = 'orange';
+      }
     }
+    
+    console.log(element);
   }
 
 }
