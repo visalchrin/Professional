@@ -1,3 +1,4 @@
+import { BoNewsCareerComponent } from './components/BO-NewsCareer/BO-newscareer.component';
 import { NewsCareerComponent } from './components/News-Career/news-career.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -31,6 +32,7 @@ const routes: Routes = [
     RegisterComponent,
     HomeComponent,
     NewsCareerComponent,
+    BoNewsCareerComponent,
   ],
   imports: [
     BrowserModule,
