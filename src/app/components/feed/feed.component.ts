@@ -36,4 +36,8 @@ export class FeedComponent implements OnInit {
     console.log(element);
   }
 
+  onClickComment(postId: string): void {
+    console.log("Click comment");
+  }
+
 }
