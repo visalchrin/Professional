@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent},
   { path: 'News-Career', component: NewsCareerComponent},
+  { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
 ]
 
 
