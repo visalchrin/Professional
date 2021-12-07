@@ -2,7 +2,7 @@ import { FormBoNewsCareerComponent } from './components/Form-Bo-Newscareer/Form-
 import { BoNewsCareerComponent } from './components/BO-NewsCareer/BO-newscareer.component';
 import { NewsCareerComponent } from './components/News-Career/news-career.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { APP_BOOTSTRAP_LISTENER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,7 +44,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     TooltipModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
