@@ -13,6 +13,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FeedComponent } from './components/feed/feed.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'feed', component: FeedComponent}
+  { path: 'feed', component: FeedComponent},
+  { path: 'about-us', component: AboutUsComponent}
 ]
 
 
@@ -32,7 +34,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    FeedComponent
+    FeedComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

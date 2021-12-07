@@ -1,0 +1,54 @@
+@import "../../../styles.scss";
+
+.about {
+    padding-top: 100px;
+    display: grid;
+    place-items: center;
+
+    h2, h3 {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    p {
+        padding-bottom: 30px;
+        max-width: 500px;
+        text-align: center;
+        @include breakpoint-less(medium) {
+            max-width: 200px;
+        }
+    }
+
+    @include breakpoint(medium) {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    &__contact {
+        
+        &-content {
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+
+            button {
+                color: #fff;
+                width: 300px;
+            }
+        }
+
+        &-map {
+            margin-top: 10px;
+            iframe {
+                margin: 0 auto;
+                max-width: 500px;
+
+                @include breakpoint-less(medium) {
+                    width: 350px;
+                }
+
+            }
+            
+        }
+    }
+}
