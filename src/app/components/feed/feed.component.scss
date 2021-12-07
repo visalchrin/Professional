@@ -116,6 +116,7 @@
     }
 
     &-commenter {
+        transition: all 300ms ease-in-out;
         margin: 10px;
         display: flex;
         img {
