@@ -1,3 +1,4 @@
+import { FormBoNewsCareerComponent } from './components/Form-Bo-Newscareer/Form-BO-Newscareer.component';
 import { BoNewsCareerComponent } from './components/BO-NewsCareer/BO-newscareer.component';
 import { NewsCareerComponent } from './components/News-Career/news-career.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'News-Career', component: NewsCareerComponent},
   { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
+  { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
 ]
 
 
@@ -34,6 +36,7 @@ const routes: Routes = [
     HomeComponent,
     NewsCareerComponent,
     BoNewsCareerComponent,
+    FormBoNewsCareerComponent,
   ],
   imports: [
     BrowserModule,
