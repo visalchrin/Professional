@@ -36,16 +36,4 @@ export class FeedComponent implements OnInit {
     console.log(element);
   }
 
-  onClickComment(postId: string): void {
-    console.log("Click comment");
-    const element = document.getElementById(`comment${postId}`);
-    if (element != null) {
-      if (element.style.display === "none") {
-        element.style.display = "block";
-      } else {
-        element.style.display = "none";
-      }
-    }
-  }
-
 }

@@ -30,9 +30,6 @@
             align-items: center;
             input {
                 width: 400px;
-                border-radius: 20px;
-                padding: 7px;
-                cursor: pointer;
 
                 @include breakpoint-less(medium) {
                     width: 275px;
@@ -64,7 +61,6 @@
             // justify-content: space-around;
 
             img {
-                object-fit: cover;
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
@@ -113,58 +109,5 @@
         }
 
 
-    }
-
-    &-commenter {
-        margin: 10px;
-        display: flex;
-        img {
-            object-fit: cover;
-            border: 1px solid #fff;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-        input {
-            width: 100%;
-            margin-left: 15px;
-        }
-    }
-
-    &-comment {
-        margin-top: 10px;
-        padding: 0 10px;
-        display: flex;
-        &-profile{
-            display: flex;
-            // flex-direction: column;
-            img {
-                object-fit: cover;
-                border: 1px solid #fff;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-            }
-            p {
-                padding-left: 10px;
-            }
-        }
-
-        &-content {
-            h5 {
-                font-weight: bold;
-                font-size: 1rem;
-            }
-            background-color: #fff;
-            margin: 0px 0px 25px;
-            padding: 10px;
-            border-radius: 10px;
-
-            p {
-                padding-top: 2px;
-                font-size: 0.95rem;
-            }
-
-        }
     }
 }
