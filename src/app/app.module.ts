@@ -13,21 +13,17 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FeedComponent } from './components/feed/feed.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
-import { SearchComponent } from './components/search/search.component';
-import { SearchService } from './services/search.service';
+
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'hello', component: NavigatorComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'feed', component: FeedComponent },
-  {
-    path: 'search',
-    component: SearchComponent,
-  },
-];
+  { path: '', component: HomeComponent},
+  { path: 'hello', component: NavigatorComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'feed', component: FeedComponent}
+]
+
 
 @NgModule({
   declarations: [
@@ -36,8 +32,7 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    FeedComponent,
-    SearchComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +42,7 @@ const routes: Routes = [
     TooltipModule.forRoot(),
     CarouselModule.forRoot(),
   ],
-  providers: [BsModalService, SearchService],
-  bootstrap: [AppComponent],
+  providers: [BsModalService],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

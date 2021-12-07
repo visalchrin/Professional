@@ -1,86 +1,21 @@
+
 <header class="header">
-  <form [formGroup]="form">
     <!-- Menu For Desktop -->
     <ul class="header-navbar header-desktop">
-      <li>
-        <a>
-          <input
-            class="form-control"
-            list="datalistOptions"
-            id="exampleDataList"
-            placeholder="Type to search people..."
-            formControlName="search_title"
-          />
-          <datalist id="datalistOptions" *ngFor="let i of list_search">
-            <option value={{ i.list_search }}></option>
-          </datalist>
-        </a>
-      </li>
-      <li>
-        <a
-          class="btn btn-primary"
-          routerLink="/search"
-          (click)="onClickSearch()"
-          >Search</a
-        >
-      </li>
-      <li>
-        <img
-          class="menuBtn showMobile hide-desktop"
-          (click)="onClickShowMenu()"
-          src="../../../assets/{{ btn }}.svg"
-          alt="close btn"
-        />
-      </li>
-      <li class="header-navbar-item">
-        <a routerLink="/home" routerLinkActive="header-active">Professional</a>
-      </li>
-      <li class="header-navbar-item"><a href="">Profile</a></li>
-      <li class="header-navbar-item">
-        <a routerLink="/feed" routerLinkActive="header-active">Feed</a>
-      </li>
-      <li class="header-navbar-item"><a href="">Contact</a></li>
-      <li class="header-navbar-item">
-        <a routerLink="/login" routerLinkActive="header-active">Login</a>
-      </li>
-      <button
-        *ngIf="!showMobileMenu"
-        routerLink="/register"
-        routerLinkActive="heder-active"
-      >
-        Register
-      </button>
+        <li><img class="menuBtn showMobile hide-desktop" (click)="onClickShowMenu()" src="../../../assets/{{btn}}.svg" alt="close btn"></li>
+        <li class="header-navbar-item"><a routerLink="/home" routerLinkActive="header-active">Professional</a></li>
+        <li class="header-navbar-item"><a href="">Profile</a></li>
+        <li class="header-navbar-item"><a routerLink="/feed" routerLinkActive="header-active">Feed</a></li>
+        <li class="header-navbar-item"><a href="">Contact Us</a></li>
+        <li class="header-navbar-item"><a routerLink="/login" routerLinkActive="header-active" >Login</a></li>
+        <button *ngIf="!showMobileMenu" routerLink="/register" routerLinkActive="heder-active" >Register</button>
     </ul>
     <!-- Menu For Mobile -->
-    <ol
-      class="mobile-menu hide-desktop"
-      [ngClass]="{ 'show-mobile': showMobileMenu }"
-    >
-      <li class="header-navbar-item">
-        <a (click)="OnNavigate()" routerLink="/home" routerLinkActive="active"
-          >Home</a
-        >
-      </li>
-      <li class="header-navbar-item">
-        <a (click)="OnNavigate()" href="">Community</a>
-      </li>
-      <li class="header-navbar-item">
-        <a (click)="OnNavigate()" href="">Contact Us</a>
-      </li>
-      <li class="header-navbar-item">
-        <a (click)="OnNavigate()" routerLink="/login" routerLinkActive="active"
-          >Login</a
-        >
-      </li>
-      <li class="header-navbar-item">
-        <button
-          (click)="OnNavigate()"
-          routerLink="/register"
-          routerLinkActive="active"
-        >
-          Register
-        </button>
-      </li>
+    <ol class=" mobile-menu hide-desktop" [ngClass]="{'show-mobile': showMobileMenu}">
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" href="">Community</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" href="">Contact Us</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/login" routerLinkActive="active" >Login</a></li>
+        <li class="header-navbar-item"><button (click)="OnNavigate()" routerLink="/register" routerLinkActive="active">Register</button></li>
     </ol>
-  </form>
 </header>
