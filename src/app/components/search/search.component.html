@@ -1,12 +1,27 @@
 <div class="container">
-  <button class="btn btn-primary1">Home</button>
-  <div class="card">
-    <ul class="list-group list-group-flush">
-
-      <li class="list-group-item">
-        Bill Gate
-      </li>
-      <button class="btn btn-primary">Follow</button>
+  <button class="btn btn-primary1" (click)="onClickHome()">Home</button>
+  <form class="form">
+    <ul
+      class="list-group list-group-flush"
+      *ngFor="let i of list_search | filter: message"
+    >
+      <div *ngIf="isNull()">
+        <img
+          src="{{ i.pic }}"
+          alt=""
+          class="image1"
+          (click)="onClickProfile()"
+        />
+        <div class="text1">
+          <p (click)="onClickName()">{{ i.name }}</p>
+          <p class="text2">{{ i.career }}</p>
+        </div>
+      </div>
+      <h1 *ngIf="num === 1">{{notFound}}</h1>
+      <button class="btn btn-primary" (click)="onClickFollow(list_search)">
+        + {{ str }}
+      </button>
+      <hr class="line" />
     </ul>
-  </div>
+  </form>
 </div>

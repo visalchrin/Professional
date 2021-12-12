@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchService } from 'src/app/services/search.service';
+
 
 @Component({
   selector: 'app-home',
@@ -11,11 +14,10 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private searchService: SearchService) { }
 
 
   ngOnInit(): void {
   }
-
 
 }

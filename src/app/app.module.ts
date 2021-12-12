@@ -15,6 +15,9 @@ import { FeedComponent } from './components/feed/feed.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { SearchComponent } from './components/search/search.component';
 import { SearchService } from './services/search.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+import { ShareService } from './services/share.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,8 +49,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     TooltipModule.forRoot(),
     CarouselModule.forRoot(),
+    AppRoutingModule,
+    Ng2SearchPipeModule,
+    FormsModule,
   ],
-  providers: [BsModalService, SearchService],
+  providers: [BsModalService, SearchService, ShareService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

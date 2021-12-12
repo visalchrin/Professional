@@ -3,26 +3,39 @@
     <!-- Menu For Desktop -->
     <ul class="header-navbar header-desktop">
       <li>
-        <a>
+        <div>
           <input
+            id="mysearch"
+            type="text"
             class="form-control"
-            list="datalistOptions"
-            id="exampleDataList"
-            placeholder="Type to search people..."
-            formControlName="search_title"
+            placeholder="Serch for name and job..."
+            formControlName="searchtext"
+            [(ngModel)]="gettext"
           />
-          <datalist id="datalistOptions" *ngFor="let i of list_search">
-            <option value={{ i.list_search }}></option>
-          </datalist>
-        </a>
+        </div>
+        <span
+          class="clear"
+          onclick="document.getElementById('mysearch').value = ''"
+          (click)="onClickDelete()"
+        ></span>
+        <div>
+          <td>
+            <ng-template #template>
+              <table class="table table-striped"></table>
+            </ng-template>
+          </td>
+        </div>
       </li>
+
       <li>
-        <a
+        <button
+          [disabled]="gettext === ''"
           class="btn btn-primary"
           routerLink="/search"
           (click)="onClickSearch()"
-          >Search</a
         >
+          Search
+        </button>
       </li>
       <li>
         <img
@@ -33,7 +46,7 @@
         />
       </li>
       <li class="header-navbar-item">
-        <a routerLink="/home" routerLinkActive="header-active">Professional</a>
+        <a routerLink="/home" routerLinkActive="header-active">Home</a>
       </li>
       <li class="header-navbar-item"><a href="">Profile</a></li>
       <li class="header-navbar-item">
@@ -84,3 +97,4 @@
     </ol>
   </form>
 </header>
+

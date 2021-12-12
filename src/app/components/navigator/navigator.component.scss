@@ -7,6 +7,7 @@
   box-shadow: 10px 15px 20px rgba($color: #000000, $alpha: 0.2);
   z-index: 20;
 
+
   &-active {
     border-bottom: 2px solid #2188ff;
   }
@@ -115,7 +116,8 @@
   right: 240px;
   width: 100px;
   height: 35px;
-
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 .header-navbar-item{
@@ -123,3 +125,38 @@
   right: 150px;
   margin-right: 20px;
 }
+.modal-body{
+  width: 1000px;
+  height: 500px;
+}
+.clear{
+  position: absolute;
+  top: 21px;
+  width: 15px;
+  height: 15px;
+  right: 1110px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clear::before
+{
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 15px;
+  background: #999;
+  transform: rotate(45deg);
+}
+.clear::after{
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 15px;
+  background: #999;
+  transform: rotate(315deg);
+}
+
+
