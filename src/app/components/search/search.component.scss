@@ -1,34 +1,37 @@
 .container {
-  width: 750px;
+  width: 600px;
   height: auto;
   position: relative;
-  top: 130px;
+  top: 110px;
   right: 300px;
 }
 .image1 {
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
   border-radius: 50%;
   margin: 0 auto 20px auto;
   display: block;
   position: relative;
-  right: 320px;
+  right: 250px;
   top: 20px;
   cursor: pointer;
 }
-.btn-primary {
+.btn1 {
   width: 120px;
+  height: 30px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   position: relative;
-  left: 580px;
+  left: 430px;
   bottom: 120px;
   text-align: center;
   border-radius: 20px;
 }
-.btn-primary1 {
+.btn3 {
+  height: 30px;
   position: relative;
-  bottom: 50px;
+  right: 50px;
+  bottom: 30px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   border-radius: 20px;
 }
@@ -39,27 +42,30 @@
 .text1 {
   cursor: pointer;
   position: relative;
-  bottom: 50px;
+  bottom: 45px;
   left: 90px;
   width: 100px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .list-group-flush {
   position: relative;
-  margin-bottom: -100px;
+  margin-bottom: -130px;
 }
 .text2 {
   font-style: italic;
   color: blue;
   font-size: 15px;
   width: 180px;
+  position: relative;
+  bottom: 20px;
 }
 .line {
-  width: 650px;
+  width: 500px;
   color: black;
   padding: 1px;
   position: relative;
-  bottom: 100px;
+  bottom: 120px;
   left: 75px;
 }
 .form1 {
@@ -80,5 +86,14 @@
   width: 400px;
   height: 300px;
   border-radius: 5px;
+}
+.btn2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 20px;
+  width: 150px;
+  height: 30px;
+  position: relative;
+  left: 220px;
+  bottom: 100px;
 }
 

@@ -1,411 +1,398 @@
 @import "../../../styles.scss";
 
 .hero {
-    padding-top: 100px;
-    background-color: #24292f;
+  
+  padding-top: 100px;
+  background-color: #24292f;
 
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    place-items: center;
-    column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+  column-gap: 20px;
 
-    @include breakpoint(medium) {
-        grid-template-columns: repeat(2, 1fr);
-        width: 1024px;
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 1024px;
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  &-content {
+    padding: 10px;
+
+    @include breakpoint-less(medium) {
+      text-align: center;
     }
 
-    @include breakpoint(large) {
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
+    h1 {
+      color: #ffff;
+      font-weight: bold;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      max-width: 500px;
+    }
+    p {
+      color: #8193b2;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      max-width: 500px;
+    }
+    &-cta {
+      padding: 10px;
+      button {
+        width: 150px;
+        margin-bottom: 20px;
+        margin-top: 15px;
+      }
+
+      @include breakpoint-less(medium) {
+        button,
+        input {
+          width: 300px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+      }
+
+      @include breakpoint(medium) {
+        input {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  &-image {
+    .image {
+      border-radius: 20px;
     }
 
-    &-content {
-        padding: 10px;
-
-        @include breakpoint-less(medium) {
-            text-align: center;
-        }
-
-        h1 {
-            color: #ffff;
-            font-weight: bold;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            max-width: 500px;
-        }
-        p {
-            color: #8193B2;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            max-width: 500px;
-        }
-        &-cta {
-            padding: 10px;
-            button {
-                width: 150px;
-                margin-bottom: 20px;
-                margin-top: 15px;
-            }
-
-            @include breakpoint-less(medium) {
-                button, input {
-                    width: 300px;
-                    margin-bottom: 20px;
-                    text-align: center;
-                }
-            }
-
-            @include breakpoint(medium) {
-                input {
-                    margin-right: 10px;
-                }
-            }
-        }
+    @include breakpoint-less(medium) {
+      .image {
+        max-width: 340px;
+        // padding: 0;
+        // margin: 0;
+        // display: none;
+      }
     }
-
-    &-image {
-        .image {
-            border-radius: 20px;
-        }
-
-        @include breakpoint-less(medium) {
-            .image {
-                max-width: 340px;
-                // padding: 0;
-                // margin: 0;
-                // display: none;
-            }
-        }
-    }
+  }
 }
 
 // style for feature section
 .features {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 
+  @include breakpoint(medium) {
+    grid-template-columns: 500px 600px;
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &-image {
     @include breakpoint(medium) {
-        grid-template-columns: 500px 600px;
+      max-width: 300px;
+    }
+    @include breakpoint-less(large) {
+      max-width: 500px;
+    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    img {
+      // border: 1px solid red;
+      width: 380px;
+      height: 180px;
+      @include breakpoint(medium) {
+        width: 300px;
+        height: 150px;
+      }
+
+      @include breakpoint(large) {
+        width: 380px;
+        height: 180px;
+      }
+
+      @include breakpoint-less(medium) {
+        display: none;
+      }
+    }
+  }
+
+  &-content {
+    @include breakpoint-less(medium) {
+      max-width: 500px;
+      width: 100%;
+      padding-top: 20px;
+      padding-top: 30px;
+    }
+    display: grid;
+    place-items: center;
+    text-align: center;
+    h1 {
+      color: #24292f;
+      font-weight: bold;
+      font-size: 2rem;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      margin-bottom: 15px;
+
+      @include breakpoint(large) {
+        margin-bottom: -30px;
+        font-size: 2.5rem;
+      }
     }
 
-    @include breakpoint(large) {
-        grid-template-columns: repeat(2, 1fr);
+    ul {
+      margin-left: 30px;
+      text-align: left;
+      li {
+        list-style: none;
+        position: relative;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 26px;
+          height: 26px;
+          font-size: 20px;
+          background-image: url("./../../../assets/arrow-circle.svg");
+          left: -35px;
+          background-repeat: no-repeat, repeat;
+        }
+      }
     }
-
-    &-image {
-        @include breakpoint(medium) {
-            max-width: 300px;
-        }
-        @include breakpoint-less(large) {
-            max-width: 500px;
-        }
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        img {
-            // border: 1px solid red;
-            width: 380px;
-            height: 180px;
-            @include breakpoint(medium) {
-                width: 300px;
-                height: 150px;
-            }
-
-            @include breakpoint(large) {
-                width: 380px;
-                height: 180px;
-            }
-
-            @include breakpoint-less(medium) {
-                display: none;
-            }
-        }
-    }
-
-    &-content {
-
-        @include breakpoint-less(medium) {
-            max-width: 500px;
-            width: 100%;
-            padding-top: 20px;
-            padding-top: 30px;
-        }
-        display: grid;
-        place-items: center;
-        text-align: center;
-        h1 {
-            color: #24292f;
-            font-weight: bold;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 2rem;
-            margin-bottom: 15px;
-
-            @include breakpoint(large) {
-                margin-bottom: -30px;
-                font-size: 2.5rem;
-            }
-        }
-
-        ul {
-            margin-left: 30px;
-            text-align: left;
-            li {
-                list-style: none;
-                position: relative;
-                font-size: 1.2rem;
-                margin-bottom: 8px;
-
-                &::before {
-                    position: absolute;
-                    content: "";
-                    width: 26px;
-                    height: 26px;
-                    font-size: 20px;
-                    background-image: url("./../../../assets/arrow-circle.svg");
-                    left: -35px;
-                    background-repeat: no-repeat, repeat;
-                }
-            }
-        }
-    }
+  }
 }
-
 
 // style for partner sections
 .partners {
-    background-color: #24292f;
+  background-color: #24292f;
 
-    @include breakpoint(medium) {
-        width: 1024px;
+  @include breakpoint(medium) {
+    width: 1024px;
+  }
+
+  @include breakpoint(large) {
+    width: 100%;
+  }
+
+  &-header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    h1 {
+      position: relative;
+      color: #ffff;
+      text-align: center;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+      font-weight: bold;
+      font-size: 2.5rem;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 285px;
+        height: 44px;
+        top: 11px;
+        border-bottom: 4px solid #2ea44f;
+      }
     }
+  }
 
-    @include breakpoint(large) {
-        width: 100%;
-    }
+  &-carousel {
+    padding: 10px;
 
-    &-header {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        h1 {
-            position: relative;
-            color: #ffff;
-            text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-weight: bold;
-            font-size: 2.5rem;
+    &-item {
+      img {
+        display: block;
+        height: 270px;
+        width: 45%;
+        margin: 0 auto;
+        border-radius: 20px;
 
-            &::before {
-                position: absolute;
-                content: "";
-                width: 285px;
-                height: 44px;
-                top: 11px;
-                border-bottom: 4px solid #2ea44f;
-            }
+        @include breakpoint-less(medium) {
+          height: 150px;
+          width: 50%;
         }
-    }
+      }
 
-    &-carousel {
-        padding: 10px;
-        
-        &-item {
+      h3 {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+        font-weight: bold;
+        color: #fff;
+        font-size: 1.5rem;
+        max-width: 300px;
+        margin: 0 auto;
+        border-radius: 10px;
+        background: -webkit-linear-gradient(-70deg, #db469f 0%, #2188ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
 
-            img {
-                display: block;
-                height: 270px; 
-                width: 45%;
-                margin: 0 auto;
-                border-radius: 20px;
-
-                @include breakpoint-less(medium) {
-                    height: 150px;
-                    width: 50%;
-                }
-            }
-
-            h3 {
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                font-weight: bold;
-                color: #fff;
-                font-size: 1.5rem;
-                max-width: 300px;
-                margin: 0 auto;
-                border-radius: 10px;
-                background: -webkit-linear-gradient(
-                    -70deg
-                    , #db469f 0%, #2188ff 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                text-align: center;
-
-                @include breakpoint-less(medium) {
-                    font-size: 1rem;
-                }
-            }
-            p {
-                text-align: center;
-                max-width: 450px;
-                margin: 0 auto;
-                font-size: 1rem;
-                font-weight: bold;
-                background: -webkit-linear-gradient(
-                    -70deg
-                    , #3bf0e4 0%, #bca1f7 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-
-                @include breakpoint-less(medium) {
-                    font-size: 0.8rem;
-                }
-
-            }
-
+        @include breakpoint-less(medium) {
+          font-size: 1rem;
         }
+      }
+      p {
+        text-align: center;
+        max-width: 450px;
+        margin: 0 auto;
+        font-size: 1rem;
+        font-weight: bold;
+        background: -webkit-linear-gradient(-70deg, #3bf0e4 0%, #bca1f7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
+        @include breakpoint-less(medium) {
+          font-size: 0.8rem;
+        }
+      }
     }
+  }
 }
 
 // style for testimonail section
 .testimonails {
-    justify-content: center;
-    align-items: center;
-    &-header {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        h1 {
-            position: relative;
-            color: #2ea44f;
-            text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-weight: bold;
-            font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  &-header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    h1 {
+      position: relative;
+      color: #2ea44f;
+      text-align: center;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+      font-weight: bold;
+      font-size: 2.5rem;
 
-            &::before {
-                position: absolute;
-                content: "";
-                width: 285px;
-                height: 44px;
-                top: 11px;
-                border-bottom: 4px solid #24292f;
-            }
-        }
+      &::before {
+        position: absolute;
+        content: "";
+        width: 285px;
+        height: 44px;
+        top: 11px;
+        border-bottom: 4px solid #24292f;
+      }
     }
+  }
 }
 
 .testimonail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  place-items: center;
+  @include breakpoint(large) {
+    width: 100%;
+  }
+
+  @include breakpoint(medium) {
+    width: 1024px;
+  }
+
+  @include breakpoint-less(medium) {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  &-item {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
     place-items: center;
-    @include breakpoint(large) {
-        width: 100%;
+    border: 2px solid #2ea44f;
+    padding: 7px;
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+
+    @include breakpoint-less(large) {
+      width: 300px;
+      height: 230px;
     }
 
-    @include breakpoint(medium) {
-        width: 1024px;
+    &-img {
+      justify-content: center;
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
     }
 
-    @include breakpoint-less(medium) {
-        grid-template-columns: 1fr;
-        row-gap: 20px;
+    &-title {
+      text-align: center;
+      margin-top: 8px;
+      h4 {
+        font-weight: bold;
+      }
     }
-
-    &-item {
-        display: grid;
-        place-items: center;
-        border: 2px solid #2ea44f;
-        padding: 7px;
-        border-radius: 10px;
-        width: 400px;
-        height: 250px;
-
-        @include breakpoint-less(large) {
-            width: 300px;
-            height: 230px;
-        }
-
-        &-img {
-            justify-content: center;
-            img {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-            }
-
-        }
-
-        &-title {
-            text-align: center;
-            margin-top: 8px;
-            h4 {
-                font-weight: bold;
-            }
-            
-
-        }
-    }
+  }
 }
 
 // style for footer
 .footer {
-    padding: 10px;
-    margin-top: 30px;
-    width: auto;
-    background-color: rgb(243, 237, 237);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-    align-items: center;
+  padding: 10px;
+  margin-top: 30px;
+  width: auto;
+  background-color: rgb(243, 237, 237);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  align-items: center;
 
-    @include breakpoint(medium) {
-        width: 1024px;
-    }
+  @include breakpoint(medium) {
+    width: 1024px;
+  }
 
-    @include breakpoint(large) {
-        width: 100%;
-    }
-    &-links {
+  @include breakpoint(large) {
+    width: 100%;
+  }
+  &-links {
+    ul {
+      display: flex;
+      justify-content: space-between;
 
-        ul{
-            display: flex;
-            justify-content: space-between;
-
-            @include breakpoint-less(large) {
-                li:nth-child(1) {
-                    display: none;
-                }
-                justify-content: left;
-                li {
-                    margin-left: 10px;
-                }
-            }
-            li{
-                list-style: none;
-                &:hover {
-                    color: #2ea44f;
-                    border-bottom: 2px solid #2ea44f;
-                }
-            }
+      @include breakpoint-less(large) {
+        li:nth-child(1) {
+          display: none;
         }
-
-    }
-
-    &-social {
-
-        ul {
-            display: flex;
-            justify-content:right;
-            li {
-                list-style: none;
-                margin-left: 20px;
-
-                img {
-                    width: 25px;
-                    height: 25px;
-                }
-            }
+        justify-content: left;
+        li {
+          margin-left: 10px;
         }
-
+      }
+      li {
+        list-style: none;
+        &:hover {
+          color: #2ea44f;
+          border-bottom: 2px solid #2ea44f;
+        }
+      }
     }
+  }
+
+  &-social {
+    ul {
+      display: flex;
+      justify-content: right;
+      li {
+        list-style: none;
+        margin-left: 20px;
+
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
 }

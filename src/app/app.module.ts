@@ -18,6 +18,7 @@ import { SearchService } from './services/search.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { ShareService } from './services/share.service';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,6 +53,7 @@ const routes: Routes = [
     AppRoutingModule,
     Ng2SearchPipeModule,
     FormsModule,
+    NgxSkeletonLoaderModule,
   ],
   providers: [BsModalService, SearchService, ShareService],
   bootstrap: [AppComponent],

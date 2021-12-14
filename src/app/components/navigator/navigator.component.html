@@ -3,14 +3,14 @@
     <!-- Menu For Desktop -->
     <ul class="header-navbar header-desktop">
       <li>
-        <div>
+        <div form="Form">
           <input
-            id="mysearch"
-            type="text"
             class="form-control"
             placeholder="Serch for name and job..."
             formControlName="searchtext"
             [(ngModel)]="gettext"
+            (click)="onClickFocus()"
+            (blur)="onClickBlur()"
           />
         </div>
         <span
@@ -46,7 +46,7 @@
         />
       </li>
       <li class="header-navbar-item">
-        <a routerLink="/home" routerLinkActive="header-active">Home</a>
+        <a routerLink="/home" routerLinkActive="header-active" style="margin-left: 40px;">Home</a>
       </li>
       <li class="header-navbar-item"><a href="">Profile</a></li>
       <li class="header-navbar-item">
@@ -57,6 +57,7 @@
         <a routerLink="/login" routerLinkActive="header-active">Login</a>
       </li>
       <button
+      class="btnReg"
         *ngIf="!showMobileMenu"
         routerLink="/register"
         routerLinkActive="heder-active"
@@ -98,3 +99,16 @@
   </form>
 </header>
 
+<form *ngIf="flag === true">
+  <div id="card" class="card">
+    <div class="head1">Recent</div>
+    <ul class="content" *ngFor="let i of hisText">
+      <div *ngIf="hisText.indexOf(i) < 4">
+        <li>
+          <img class="img" (click)="onClickProfile()"/>
+        </li>
+        <li class="text" (click)="onClickProfile()">{{i.hisText}}</li>
+      </div>
+    </ul>
+  </div>
+</form>

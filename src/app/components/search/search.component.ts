@@ -13,7 +13,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { NavigatorComponent } from '../navigator/navigator.component';
 import { ShareService } from 'src/app/services/share.service';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-search',
@@ -21,13 +20,15 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  num: any;
+  con1: any = 6;
+  con2: any = 5;
   list_search: any[] = [];
+  list_history: any[] = [];
   notFound: string = 'Search not found';
   searchText: string = '';
   str: string = 'Follow';
   id: string = '';
-  message: string = '';
+  message: any = '';
 
   constructor(
     private fb: FormBuilder,
@@ -38,7 +39,7 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.message = this.shareService.getMessage();
+    this.message = this.shareService.getMessage1();
     this.list_search = this.getAllUser();
   }
 
@@ -70,13 +71,18 @@ export class SearchComponent implements OnInit {
     }
   }
   isNull(): any {
-    if(this.message === this.shareService.getMessage()) {
-      return this.message = this.shareService.getMessage();
-    }
-    else {
-      return this.message = this.shareService.getMessage();
+    if (this.message === this.shareService.getMessage1()) {
+      return (this.message = this.shareService.getMessage1());
+    } else {
+      return (this.message = this.shareService.getMessage1());
     }
   }
+  onClickSeeMore() {
+    this.con1 >= this.con1;
+    this.con2 = !this.con2;
+  }
+
+
 
   // receieveMessage($event: string){
   //   this.child = $event;

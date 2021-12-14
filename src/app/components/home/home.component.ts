@@ -13,11 +13,12 @@ import { SearchService } from 'src/app/services/search.service';
   ]
 })
 export class HomeComponent implements OnInit {
-
+  flag: any;
   constructor(private searchService: SearchService) { }
 
 
   ngOnInit(): void {
   }
+  
 
 }

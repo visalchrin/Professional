@@ -5,13 +5,18 @@ import { Injectable } from '@angular/core';
 })
 
 export class ShareService {
-  message: string = '';
+  message1: string = '';
+  message2: string = '';
+
 
   constructor() {}
-  setMessage(data: string){
-    this.message = data;
+  setMessage(data1: string){
+    this.message1 = data1;
   }
-  getMessage(){
-    return this.message;
+  getMessage1(){
+    return this.message1;
+  }
+  getMessage2(){
+    return this.message2;
   }
 }

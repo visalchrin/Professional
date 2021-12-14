@@ -10,7 +10,6 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SearchService } from 'src/app/services/search.service';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ShareService } from 'src/app/services/share.service';
 
 @Component({
@@ -19,17 +18,18 @@ import { ShareService } from 'src/app/services/share.service';
   styleUrls: ['./navigator.component.scss'],
 })
 export class NavigatorComponent {
-  gettext: string = '';
-  click: boolean = false;
+  flag: boolean = false;
+  gettext: any = '';
   modalRef?: BsModalRef;
   form: FormGroup;
   btn: string = '';
   showMobileMenu: boolean = false;
+  hisText: any[] = [];
 
   //@Output() event = new EventEmitter<string>();
 
   constructor(
-    private route: Router,
+    private router: Router,
     private fb: FormBuilder,
     private searchService: SearchService,
     private shareService: ShareService,
@@ -41,7 +41,9 @@ export class NavigatorComponent {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+
+  }
 
   onClickShowMenu() {
     this.showMobileMenu = !this.showMobileMenu;
@@ -61,7 +63,7 @@ export class NavigatorComponent {
     }
   }
   onClickDelete() {
-    this.route.navigate(["./home"]);
+    //this.route.navigate(['./home']);
     return (this.gettext = '');
   }
   getAllUser() {
@@ -69,8 +71,22 @@ export class NavigatorComponent {
   }
 
   onClickSearch() {
-    return this.shareService.setMessage(this.gettext);
+    this.flag = false;
+    this.hisText = this.gettext;
+    this.shareService.setMessage(this.gettext);
   }
+  onClickFocus(): any {
+    return (this.flag = true);
+  }
+  onClickBlur(): any {
+    return (this.flag = false);
+  }
+  onClickProfile() {
+    this.router.navigate(["./profile"]);
+  }
+
+
+
 
   // openModal(template: TemplateRef<any>) {
   //   this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
