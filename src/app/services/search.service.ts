@@ -8,40 +8,39 @@ export class SearchService {
 
   constructor(private router: Router) {}
 
-  list_users = [
+  list_users: any = [
     {
       id: '01',
       name: 'Visal',
       career: 'Computer Science',
       pic: '../../../assets/future.jpg',
-      str1: 'Follow',
     },
     {
-      id: '01',
+      id: '02',
       name: 'Kimchhay',
       career: 'Computer Science',
       pic: '../../../assets/future.jpg',
     },
     {
-      id: '02',
+      id: '03',
       name: 'Kongden',
       career: 'Computer Science',
       pic: '../../../assets/future.jpg',
     },
     {
-      id: '03',
+      id: '04',
       name: 'Kiri',
       career: 'Computer Science',
       pic: '../../../assets/future.jpg',
     },
     {
-      id: '04',
+      id: '05',
       name: 'Linna',
       career: 'Computer Science',
       pic: '../../../assets/future.jpg',
     },
     {
-      id: '05',
+      id: '06',
       name: 'Elon Musk',
       career: 'Computer Science',
       pic: '../../../assets/future.jpg',

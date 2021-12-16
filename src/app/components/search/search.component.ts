@@ -22,13 +22,13 @@ import { ShareService } from 'src/app/services/share.service';
 export class SearchComponent implements OnInit {
   con1: any = 6;
   con2: any = 5;
-  list_search: any[] = [];
-  list_history: any[] = [];
+  list_search: any = [];
   notFound: string = 'Search not found';
   searchText: string = '';
-  str: string = 'Follow';
+  str: string = '+Follow';
   id: string = '';
-  message: any = '';
+  message: any = [];
+  isTrue: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -52,37 +52,36 @@ export class SearchComponent implements OnInit {
   }
 
   onClickProfile() {
-    this.router.navigate(['./home']);
+    this.router.navigate(['./profile']);
     console.log(this.message);
   }
 
   onClickName() {
-    this.router.navigate(['./home']);
+    this.router.navigate(['./profile']);
   }
-
-  onClickFollow(list_search: any) {
-    const value = this.getAllUser().find(
-      (result) => result.id === list_search.id
+  onClickFollow() {
+    const value = this.list_search.find(
+      (r: any) => r.id === this.list_search.id
     );
-    if (this.str === 'Follow' && value) {
-      return (this.str = 'Unfollow');
+    if (this.str === '+Follow' && value) {
+      this.str = 'Unfollow';
     } else {
-      return (this.str = 'Follow');
-    }
-  }
-  isNull(): any {
-    if (this.message === this.shareService.getMessage1()) {
-      return (this.message = this.shareService.getMessage1());
-    } else {
-      return (this.message = this.shareService.getMessage1());
+      this.str = '+Follow';
     }
   }
   onClickSeeMore() {
     this.con1 >= this.con1;
     this.con2 = !this.con2;
   }
-
-
+  onSearchNotFound() {
+    if (this.shareService.getMessage1() === '') {
+      this.message = this.shareService.getMessage1();
+      return true;
+    } else {
+      this.message = this.shareService.getMessage1();
+      return true;
+    }
+  }
 
   // receieveMessage($event: string){
   //   this.child = $event;

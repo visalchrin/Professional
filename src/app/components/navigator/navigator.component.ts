@@ -19,12 +19,13 @@ import { ShareService } from 'src/app/services/share.service';
 })
 export class NavigatorComponent {
   flag: boolean = false;
-  gettext: any = '';
+  gettext: string = '';
   modalRef?: BsModalRef;
   form: FormGroup;
   btn: string = '';
   showMobileMenu: boolean = false;
-  hisText: any[] = [];
+  hisList: any = [];
+  getUsers: any = [];
 
   //@Output() event = new EventEmitter<string>();
 
@@ -42,7 +43,7 @@ export class NavigatorComponent {
   }
 
   ngOnInit() {
-
+    this.getUsers = this.getAllUser();
   }
 
   onClickShowMenu() {
@@ -63,7 +64,7 @@ export class NavigatorComponent {
     }
   }
   onClickDelete() {
-    //this.route.navigate(['./home']);
+    //this.router.navigate(['./home']);
     return (this.gettext = '');
   }
   getAllUser() {
@@ -71,8 +72,8 @@ export class NavigatorComponent {
   }
 
   onClickSearch() {
-    this.flag = false;
-    this.hisText = this.gettext;
+    this.flag = false;  //controling to disable or enable button search
+    this.hisList = this.gettext;
     this.shareService.setMessage(this.gettext);
   }
   onClickFocus(): any {
@@ -82,9 +83,16 @@ export class NavigatorComponent {
     return (this.flag = false);
   }
   onClickProfile() {
-    this.router.navigate(["./profile"]);
+    this.router.navigate(['./profile']);
   }
-
+  isShow(){
+    if (this.gettext !== ''){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
 
 

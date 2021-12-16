@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
 .hero {
-  
+
   padding-top: 100px;
   background-color: #24292f;
 
@@ -395,4 +395,11 @@
       }
     }
   }
+}
+.btn{
+  height: 35px;
+  border-radius: 30px;
+}
+.input{
+  border-radius: 30px;
 }

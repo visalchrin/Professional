@@ -6,9 +6,10 @@
         <div form="Form">
           <input
             class="form-control"
-            placeholder="Serch for name and job..."
+            placeholder=" Serch for name and job..."
             formControlName="searchtext"
             [(ngModel)]="gettext"
+            autocomplete="off"
             (click)="onClickFocus()"
             (blur)="onClickBlur()"
           />
@@ -46,7 +47,12 @@
         />
       </li>
       <li class="header-navbar-item">
-        <a routerLink="/home" routerLinkActive="header-active" style="margin-left: 40px;">Home</a>
+        <a
+          routerLink="/home"
+          routerLinkActive="header-active"
+          style="margin-left: 40px"
+          >Home</a
+        >
       </li>
       <li class="header-navbar-item"><a href="">Profile</a></li>
       <li class="header-navbar-item">
@@ -57,7 +63,7 @@
         <a routerLink="/login" routerLinkActive="header-active">Login</a>
       </li>
       <button
-      class="btnReg"
+        class="btnReg"
         *ngIf="!showMobileMenu"
         routerLink="/register"
         routerLinkActive="heder-active"
@@ -101,14 +107,35 @@
 
 <form *ngIf="flag === true">
   <div id="card" class="card">
-    <div class="head1">Recent</div>
-    <ul class="content" *ngFor="let i of hisText">
-      <div *ngIf="hisText.indexOf(i) < 4">
-        <li>
-          <img class="img" (click)="onClickProfile()"/>
-        </li>
-        <li class="text" (click)="onClickProfile()">{{i.hisText}}</li>
-      </div>
-    </ul>
+    <div class="head1" *ngIf="!isShow()">Recent</div>
+    <div *ngIf="!isShow()">
+      <form class="content1">
+        <div *ngFor="let i of hisList">
+          <img />
+          <a>{{ i.hisList }}</a>
+        </div>
+        <div class="topsearch">
+          <h1 class="h2">Try to search for</h1>
+          <li>#</li>
+          <div class="text1">
+            <li>Elon Musk</li>
+            <li>Bill Gate</li>
+            <li>Obama</li>
+          </div>
+        </div>
+      </form>
+      <hr class="line" />
+    </div>
+    <div *ngIf="isShow()">
+      <ul class="content" *ngFor="let i of getUsers | filter: gettext">
+        <div>
+          <li>
+            <img class="img" (click)="onClickProfile()" src="{{ i.pic }}" />
+          </li>
+          <li class="text" (click)="onClickProfile()">{{ i.name }}</li>
+          <li class="text" (click)="onClickProfile()">{{ i.career }}</li>
+        </div>
+      </ul>
+    </div>
   </div>
 </form>
