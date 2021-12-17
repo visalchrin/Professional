@@ -6,7 +6,7 @@
       *ngFor="let i of list_search | filter: message"
     >
       <div *ngIf="onSearchNotFound()">
-        <div *ngIf="list_search.indexOf(i) < con1">
+        <div *ngIf="list_search.indexOf(i)  con1">
           <img
             src="{{ i.pic }}"
             alt=""
