@@ -5,17 +5,14 @@
         <li><img class="menuBtn showMobile hide-desktop" (click)="onClickShowMenu()" src="../../../assets/{{btn}}.svg" alt="close btn"></li>
         <li class="header-navbar-item"><a routerLink="/home" routerLinkActive="header-active">Professional</a></li>
         <li class="header-navbar-item"><a href="">Profile</a></li>
-<<<<<<< HEAD
         <li class="header-navbar-item"><a routerLink="/feed" routerLinkActive="header-active">Feed</a></li>
         <li class="header-navbar-item"><a routerLink="/about-us" routerLinkActive="header-active">Contact Us</a></li>
-=======
         <li class="header-navbar-item"><a href="">Community</a></li>
         <li class="header-navbar-item"><a href="">Contact Us</a></li>
+        <li class="header-navbar-item"><a routerLink="/BO-NewsCareer" routerLinkActive="header-active" >BO-News-Career</a></li>
         <li class="header-navbar-item"><a routerLink="/News-Career" routerLinkActive="header-active" >News-Career</a></li>
->>>>>>> Newss
         <li class="header-navbar-item"><a routerLink="/login" routerLinkActive="header-active" >Login</a></li>
         <button *ngIf="!showMobileMenu" routerLink="/register" routerLinkActive="heder-active" >Register</button>
-        <li class="header-navbar-item"><a routerLink="/BO-NewsCareer" routerLinkActive="header-active" >BO-News-Career</a></li>
     </ul>
     <!-- Menu For Mobile -->
     <ol class=" mobile-menu hide-desktop" [ngClass]="{'show-mobile': showMobileMenu}">
