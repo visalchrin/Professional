@@ -5,9 +5,8 @@
         <li><img class="menuBtn showMobile hide-desktop" (click)="onClickShowMenu()" src="../../../assets/{{btn}}.svg" alt="close btn"></li>
         <li class="header-navbar-item"><a routerLink="/home" routerLinkActive="header-active">Professional</a></li>
         <li class="header-navbar-item"><a href="">Profile</a></li>
-        <li class="header-navbar-item"><a routerLink="/feed" routerLinkActive="header-active">Feed</a></li>
+        <li class="header-navbar-item"><a routerLink="/feed" routerLinkActive="header-active">Community</a></li>
         <li class="header-navbar-item"><a routerLink="/about-us" routerLinkActive="header-active">Contact Us</a></li>
-        <li class="header-navbar-item"><a href="">Community</a></li>
         <li class="header-navbar-item"><a href="">Contact Us</a></li>
         <li class="header-navbar-item"><a routerLink="/BO-NewsCareer" routerLinkActive="header-active" >BO-News-Career</a></li>
         <li class="header-navbar-item"><a routerLink="/News-Career" routerLinkActive="header-active" >News-Career</a></li>
@@ -17,7 +16,8 @@
     <!-- Menu For Mobile -->
     <ol class=" mobile-menu hide-desktop" [ngClass]="{'show-mobile': showMobileMenu}">
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li class="header-navbar-item"><a (click)="OnNavigate()" href="">Community</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/feed" routerLinkActive="active">Community</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/News-Career" routerLinkActive="active">News</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/about-us" routerLinkActive="active">Contact Us</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/login" routerLinkActive="active" >Login</a></li>
         <li class="header-navbar-item"><button (click)="OnNavigate()" routerLink="/register" routerLinkActive="active">Register</button></li>
