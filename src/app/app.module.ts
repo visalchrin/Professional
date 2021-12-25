@@ -1,5 +1,8 @@
+import { FormBoNewsCareerComponent } from './components/Form-Bo-Newscareer/Form-BO-Newscareer.component';
+import { BoNewsCareerComponent } from './components/BO-NewsCareer/BO-newscareer.component';
+import { NewsCareerComponent } from './components/News-Career/news-career.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { APP_BOOTSTRAP_LISTENER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +26,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent},
   { path: 'feed', component: FeedComponent},
-  { path: 'about-us', component: AboutUsComponent}
+  { path: 'about-us', component: AboutUsComponent},
+  { path: 'News-Career', component: NewsCareerComponent},
+  { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
+  { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
 ]
 
 
@@ -35,7 +41,10 @@ const routes: Routes = [
     RegisterComponent,
     HomeComponent,
     FeedComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    NewsCareerComponent,
+    BoNewsCareerComponent,
+    FormBoNewsCareerComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +52,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     TooltipModule.forRoot(),
-    CarouselModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]
