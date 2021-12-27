@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class SearchService {
-
   constructor(private router: Router) {}
 
   list_users: any = [
@@ -45,12 +44,14 @@ export class SearchService {
       career: 'Computer Science',
       pic: '../../../assets/future.jpg',
     },
-  ];
-  Photoes = [
     {
-
-    }
-  ]
+      id: '06',
+      name: 'Elon Musk',
+      career: 'Computer Science',
+      pic: '../../../assets/future.jpg',
+    },
+  ];
+  Photoes = [{}];
 
   getAllUsers() {
     return this.list_users;

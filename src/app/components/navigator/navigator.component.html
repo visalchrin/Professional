@@ -3,10 +3,16 @@
     <!-- Menu For Desktop -->
     <ul class="header-navbar header-desktop">
       <li>
+        <img
+          class="logo"
+          src="https://www.kindpng.com/picc/m/70-707557_c-logo-png-hd-transparent-png.png"
+        />
+      </li>
+      <li>
         <div form="Form">
           <input
             class="form-control"
-            placeholder=" Serch for name and job..."
+            placeholder="  Serch for name and job..."
             formControlName="searchtext"
             [(ngModel)]="gettext"
             autocomplete="off"
@@ -110,13 +116,12 @@
     <div class="head1" *ngIf="!isShow()">Recent</div>
     <div *ngIf="!isShow()">
       <form class="content1">
-        <div *ngFor="let i of hisList">
+        <div>
           <img />
-          <a>{{ i.hisList }}</a>
+    
         </div>
         <div class="topsearch">
           <h1 class="h2">Try to search for</h1>
-          <li>#</li>
           <div class="text1">
             <li>Elon Musk</li>
             <li>Bill Gate</li>
@@ -128,7 +133,7 @@
     </div>
     <div *ngIf="isShow()">
       <ul class="content" *ngFor="let i of getUsers | filter: gettext">
-        <div>
+        <div *ngIf="getUsers.indexOf(i) < 5">
           <li>
             <img class="img" (click)="onClickProfile()" src="{{ i.pic }}" />
           </li>

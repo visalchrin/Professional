@@ -25,7 +25,7 @@ export class NavigatorComponent {
   btn: string = '';
   showMobileMenu: boolean = false;
   hisList: any = [];
-  getUsers: any = [];
+  getUsers: any[] = [];
 
   //@Output() event = new EventEmitter<string>();
 
@@ -43,6 +43,7 @@ export class NavigatorComponent {
   }
 
   ngOnInit() {
+    console.log(this.gettext);
     this.getUsers = this.getAllUser();
   }
 
@@ -64,7 +65,7 @@ export class NavigatorComponent {
     }
   }
   onClickDelete() {
-    //this.router.navigate(['./home']);
+    this.router.navigate(['./home']);
     return (this.gettext = '');
   }
   getAllUser() {
@@ -72,9 +73,9 @@ export class NavigatorComponent {
   }
 
   onClickSearch() {
-    this.flag = false;  //controling to disable or enable button search
+    this.flag = false; //controling to disable or enable form search
     this.hisList = this.gettext;
-    this.shareService.setMessage(this.gettext);
+    return this.shareService.setMessage(this.gettext);
   }
   onClickFocus(): any {
     return (this.flag = true);
@@ -85,16 +86,13 @@ export class NavigatorComponent {
   onClickProfile() {
     this.router.navigate(['./profile']);
   }
-  isShow(){
-    if (this.gettext !== ''){
+  isShow() {
+    if (this.gettext !== '') {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
-
-
 
   // openModal(template: TemplateRef<any>) {
   //   this.modalRef = this.modalService.show(template, { class: 'modal-sm' });

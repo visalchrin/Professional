@@ -1,12 +1,37 @@
-
 <div class="container" onclick="ngOnInit()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <button class="nav-link active" aria-current="page" href="#">
+            All
+          </button>
+          <button class="nav-link">Companies</button>
+          <button class="nav-link">Posts</button>
+          <button class="nav-link">Jobs</button>
+          <button class="nav-link">Schools</button>
+        </div>
+      </div>
+    </div>
+  </nav>
   <form class="form">
     <ul
       class="list-group list-group-flush"
       *ngFor="let i of list_search | filter: message"
     >
       <div *ngIf="onSearchNotFound()">
-        <div *ngIf="list_search.indexOf(i)  con1">
+        <div *ngIf="list_search.indexOf(i) < con1">
           <img
             src="{{ i.pic }}"
             alt=""
@@ -17,8 +42,7 @@
             <p (click)="onClickName()">{{ i.name }}</p>
             <p class="text2">{{ i.career }}</p>
           </div>
-          <h1 *ngIf="">{{ notFound }}</h1>
-          <button class="btn1" (click)="onClickFollow()">
+          <button class="btn1" (click)="onClickFollow(list_search)">
             {{ str }}
           </button>
           <hr class="line" />
@@ -33,4 +57,49 @@
       </div>
     </ul>
   </form>
+  <div>
+    <h1 class="notfound" *ngIf="isNull() === false">
+      {{ notFound }}
+    </h1>
+  </div>
 </div>
+<form class="form2">
+  <!-- <h1 class="pro">Promoted</h1> -->
+  <div class="card">
+    <img src="../../../assets/future.jpg" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Tux Global</h5>
+      <p class="card-text">
+        Scholarship for batch 2 is coming out! Hold your chance
+      </p>
+      <p class="learn_more" (click)="openModal(template)">Learn More</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="../../../assets/future.jpg" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Tux Global</h5>
+      <p class="card-text">Apply your CV now</p>
+      <p class="learn_more" (click)="openModal(template)">Learn More</p>
+    </div>
+  </div>
+</form>
+
+<!-- Modal -->
+<td class="template">
+  <ng-template #template>
+    <div class="modal-body text-center">
+      <p>
+        TUX Global Institute is a Japan-funded registered organization that aims
+        not only to increase the number of Cambodian human resources in Software
+        Engineering and Technology with on-demand learning programs through a
+        scholarship but also to strengthen a last-long relationship between
+        Cambodia and Japan that will benefit the people and both countries as a
+        whole.
+      </p>
+      <button type="button" class="btn4 btn-primary" (click)="decline()">
+        Close
+      </button>
+    </div>
+  </ng-template>
+</td>
