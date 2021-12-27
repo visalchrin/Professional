@@ -12,12 +12,14 @@
   &-active {
     border-bottom: 2px solid #2188ff;
   }
+
   @include breakpoint(medium) {
     ul {
       .hide-desktop {
         display: none;
       }
     }
+
     .hide-desktop {
       display: none;
     }
@@ -257,6 +259,7 @@
   position: relative;
   left: 40px;
   top: 20px;
+
 }
 
 
