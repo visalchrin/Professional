@@ -17,6 +17,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FeedComponent } from './components/feed/feed.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'News-Career', component: NewsCareerComponent},
   { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
   { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
+  { path: 'profile', component: ProfileComponent}
 ]
 
 
@@ -45,6 +47,7 @@ const routes: Routes = [
     NewsCareerComponent,
     BoNewsCareerComponent,
     FormBoNewsCareerComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
