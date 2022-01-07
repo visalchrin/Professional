@@ -18,6 +18,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { PostComponent } from './components/post/post.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
     BoNewsCareerComponent,
     FormBoNewsCareerComponent,
     ProfileComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

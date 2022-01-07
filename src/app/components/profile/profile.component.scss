@@ -1,0 +1,41 @@
+.profile {
+
+    padding-top: 80px;
+    &-container {
+        padding: 10px;
+        max-width: 700px;
+        margin: 0 auto;
+        border: 2px solid #fff;
+        box-shadow: 0px 1px 6px 0px #d8dce2;;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+        place-items: center;
+    }
+
+    &-image {
+        img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+    }
+
+    &-info {
+        h4 {
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: black;
+            font-weight: 700;
+            span {
+                font-size: 1rem;
+                font-weight: 300;
+            }
+        }
+    }
+}

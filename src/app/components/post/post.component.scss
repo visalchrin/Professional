@@ -1,0 +1,127 @@
+
+
+.posts {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.post {
+    background-color: rgba(245, 245, 245, 0.9);
+    border-radius: 10px;
+    border: 2px solid gainsboro;
+    margin-top: 20px;
+    padding: 20px;
+
+    &-owner {
+        // display: flex;
+
+        &-profile {
+            display: flex;
+            align-items: center;
+            // justify-content: space-around;
+
+            img {
+                object-fit: cover;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid green;
+            }
+            h5 {
+                margin-left: 15px;
+            }
+
+            h6 {
+                margin-left: 15px;
+            }
+        }
+
+    }
+
+    &-content {
+        padding: 5px;
+
+    }
+
+    &-reaction {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 2px solid black;
+
+        a {
+            display: grid;
+            place-items: center;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            svg {
+                margin-right: 4px;
+                font-size: 1.5rem;
+            }
+
+            // &:hover {
+            //     color: green;
+            //     transition: all 150ms ease-in-out;
+            //     svg {
+            //         color: green;
+            //     }
+            // }
+        }
+
+
+    }
+
+    &-commenter {
+        margin: 10px;
+        display: flex;
+        img {
+            object-fit: cover;
+            border: 1px solid #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        input {
+            width: 100%;
+            margin-left: 15px;
+        }
+    }
+
+    &-comment {
+        margin-top: 10px;
+        padding: 0 10px;
+        display: flex;
+        &-profile{
+            display: flex;
+            // flex-direction: column;
+            img {
+                object-fit: cover;
+                border: 1px solid #fff;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+            p {
+                padding-left: 10px;
+            }
+        }
+
+        &-content {
+            h5 {
+                font-weight: bold;
+                font-size: 1rem;
+            }
+            background-color: #fff;
+            margin: 0px 0px 25px;
+            padding: 10px;
+            border-radius: 10px;
+
+            p {
+                padding-top: 2px;
+                font-size: 0.95rem;
+            }
+
+        }
+    }
+}
