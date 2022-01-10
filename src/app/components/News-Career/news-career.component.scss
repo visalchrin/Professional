@@ -14,6 +14,10 @@ section{
     display: flex;
     align-items: center;
 
+    @include breakpoint-less(medium) {
+        display: none;
+    }
+
     &-latestPost {
         width: 60%;
         height: 500px;
@@ -48,8 +52,13 @@ section{
         }
 
         &-content {
-            display: flex;
-            justify-content: space-evenly;
+            // display: flex;
+            display: grid;
+            // justify-content: space-evenly;
+            grid-template-columns: repeat(3, 1fr);
+            @include breakpoint-less(medium) {
+                grid-template-columns: 1fr;
+            }
 
             .card {
                 margin: 6px;
@@ -85,9 +94,13 @@ section{
 
 .articles {
     padding: 20px 80px;
+
+    @include breakpoint-less(medium) {
+        padding: 10px 10px;
+    }
+
     padding-top: 0;
     color: #fff;
-    border: 1px solid red;
     h1 {
         padding-left: 20px;
         color:rgb(255, 255, 255);
@@ -96,23 +109,50 @@ section{
         font-size: 1.7rem;
         text-transform: uppercase;
         padding-bottom: 30px;
+
+        @include breakpoint-less(medium) {
+            font-size: 1.1rem;
+        }
         &::after {
             position: absolute;
             content: "";
             border-bottom: 5px solid #377D39;
             height: 5px;
             width: 500px;
-            left: 50px;
+            left: 100px;
             transform: translateY(27px);
         }
     }
 
+    .contents {
+        background-color: #d8dce2;
+        border: 1px solid #d8dce2;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
     .card {
+        margin-top: 10px;
+        border: 1px solid #fff;
+        border-radius: 10px;
         padding: 8px;
         color: #24292f;
         display: grid;
         grid-template-columns: 200px auto;
         place-items: center;
+        transition: all 150ms ease-in-out;
+
+        @include breakpoint-less(medium) {
+            grid-template-columns: 70px auto;
+            max-width: 450px;
+            p {
+                display: none;
+            }
+        }
+
+        &:hover {
+            background-color: #dde1e6;
+        }
 
         &-image {
             width: 100%;
@@ -120,6 +160,28 @@ section{
                 // width: 200px;
                 height: 150px;
                 border-radius: 5px;
+
+                @include breakpoint-less(medium) {
+                    height: 50px;
+                }
+            }
+        }
+
+        &-content {
+            h4 {
+                color: #24292f;
+                font-size: 1.2rem;
+                font-family: "Nunito";
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            h5 {
+                font-weight: bold;
+                span {
+                    color: green;
+                    font-weight: bold;
+                }
             }
         }
     }
