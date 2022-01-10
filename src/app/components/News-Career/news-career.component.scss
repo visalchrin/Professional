@@ -7,8 +7,9 @@ section{
 }
 
 .container{
+    padding-top: 80px;
     width: 100%;
-    height: 800px;
+    height: 650px;
     background-color: #24292f;
     display: flex;
     align-items: center;
@@ -22,7 +23,7 @@ section{
         box-shadow: 0px 1px 6px 0px #d8dce2;
         border-radius: 10px;
         border: 1px solid #fff;
-        padding: 15px;
+        padding: 5px;
 
         p {
             padding-left: 45%;
@@ -82,147 +83,39 @@ section{
     }
 }
 
-
-// @Career News Body part of page 
-
-.body-container{
-    background-color: #32CD32;
-    width: 100%;
-    height: 900px;
-}
-
-.body-container h1{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: red;
-    width: 280px;
-}
-
-.title-NewsCareer{
-    width: 100%;
-    height: 70px;
-    background-color: rgb(230, 225, 225);
-    box-shadow: 5px 4px 8px black;
-    display: flex;
-    align-items: center;
-}
-.title-NewsCareer h1{
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   text-decoration: underline;
-   font-size: 40px;
-   padding-left: 50px;
-   cursor: default;
-}
-
-.News-Content{
-    width: 100%;
-    height: 1000px;
-    background-color: #24292f;
-}
-
-.card-News{
-    padding-left: 30px;
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-evenly;
-}
-.card-News h5{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-seri;
-}
-.card-News p{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-//Foot part of page
-
-.footer{
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 80px;
-    background-color: bisque;
-    align-items: center;
-}
-
-.footer ul{
-    list-style-type: none;
-}
-
-.footer ul li{
-    float: left;
-    padding-left: 100px;
-
-}
-
-.footer-social{
-    display: flex;
-    align-items: center;
-}
-
-.footer-social ul li{
-    float: right;
-    padding-left: 200px;
-}
-
-
-// style for footer
-.footer {
-    padding: 10px;
-    margin-top: 30px;
-    width: auto;
-    background-color: rgb(243, 237, 237);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-    align-items: center;
-
-    @include breakpoint(medium) {
-        width: 1024px;
+.articles {
+    padding-top: 0;
+    color:#24292f;
+    h1 {
+        color:rgb(255, 255, 255);
+        font-family: "Nunito";
+        font-weight: bold;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        &::after {
+            position: absolute;
+            content: "";
+            border-bottom: 5px solid #377D39;
+            height: 5px;
+            width: 500px;
+            left: 0;
+            transform: translateY(27px);
+        }
     }
 
-    @include breakpoint(large) {
-        width: 100%;
-    }
-    &-links {
+    .card {
+        color: #24292f;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        place-items: center;
 
-        ul{
-            display: flex;
-            justify-content: space-between;
-
-            @include breakpoint-less(large) {
-                li:nth-child(1) {
-                    display: none;
-                }
-                justify-content: left;
-                li {
-                    margin-left: 10px;
-                }
-            }
-            li{
-                list-style: none;
-                &:hover {
-                    color: #2ea44f;
-                    border-bottom: 2px solid #2ea44f;
-                }
+        &-image {
+            width: 100%;
+            img {
+                // width: 200px;
+                height: 150px;
+                border-radius: 5px;
             }
         }
-
-    }
-
-    &-social {
-
-        ul {
-            display: flex;
-            justify-content:right;
-            li {
-                list-style: none;
-                margin-left: 20px;
-
-                img {
-                    width: 25px;
-                    height: 25px;
-                }
-            }
-        }
-
     }
 }
