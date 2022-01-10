@@ -1,3 +1,4 @@
+import { Router, RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigatorComponent implements OnInit {
   btn: string = '';
+  keyword: string = '';
   showMobileMenu: boolean = false;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.btn = 'hamburger';
   }
 
   ngOnInit(): void {
     
+  }
+
+  onSubmit() {
+    // When user search something
+    console.log(this.keyword);
+    this.router.navigate(["feed"]);
+    this.keyword = "";
   }
 
   onClickShowMenu() {

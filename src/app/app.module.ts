@@ -19,6 +19,8 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostComponent } from './components/post/post.component';
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -50,6 +52,7 @@ const routes: Routes = [
     FormBoNewsCareerComponent,
     ProfileComponent,
     PostComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     TooltipModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    FormsModule,
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]
