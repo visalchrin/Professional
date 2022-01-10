@@ -22,7 +22,7 @@ export class NavigatorComponent implements OnInit {
   onSubmit() {
     // When user search something
     console.log(this.keyword);
-    this.router.navigate(["feed"]);
+    this.router.navigate(["search"]);
     this.keyword = "";
   }
 

@@ -34,7 +34,8 @@ const routes: Routes = [
   { path: 'News-Career', component: NewsCareerComponent},
   { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
   { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  { path: 'search', component: SearchComponent}
 ]
 
 
