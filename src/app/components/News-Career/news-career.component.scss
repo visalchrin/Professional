@@ -84,29 +84,34 @@ section{
 }
 
 .articles {
+    padding: 20px 80px;
     padding-top: 0;
-    color:#24292f;
+    color: #fff;
+    border: 1px solid red;
     h1 {
+        padding-left: 20px;
         color:rgb(255, 255, 255);
         font-family: "Nunito";
         font-weight: bold;
         font-size: 1.7rem;
         text-transform: uppercase;
+        padding-bottom: 30px;
         &::after {
             position: absolute;
             content: "";
             border-bottom: 5px solid #377D39;
             height: 5px;
             width: 500px;
-            left: 0;
+            left: 50px;
             transform: translateY(27px);
         }
     }
 
     .card {
+        padding: 8px;
         color: #24292f;
         display: grid;
-        grid-template-columns: 30% 70%;
+        grid-template-columns: 200px auto;
         place-items: center;
 
         &-image {
