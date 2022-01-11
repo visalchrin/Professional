@@ -22,6 +22,7 @@ import { PostComponent } from './components/post/post.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { NewsDetailComponent } from './components/news-detail/news-detail.component';
+import { CustomMarkdownPipe } from './custom-markdown.pipe';
 
 
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
     PostComponent,
     SearchComponent,
     NewsDetailComponent,
+    CustomMarkdownPipe,
   ],
   imports: [
     BrowserModule,

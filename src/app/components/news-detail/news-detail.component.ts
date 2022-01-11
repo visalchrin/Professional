@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsDetailComponent implements OnInit {
 
+  public quote: string = '***Make right desire and he will approach you in the highest way.***';
+  public question: string = 'Have you seen **WandaVision** yet.';
   constructor() { }
 
   ngOnInit(): void {
