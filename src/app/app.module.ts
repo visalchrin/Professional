@@ -21,6 +21,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PostComponent } from './components/post/post.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { NewsDetailComponent } from './components/news-detail/news-detail.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
   { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'search', component: SearchComponent}
+  { path: 'search', component: SearchComponent},
+  { path: 'newsDetail', component: NewsDetailComponent}
 ]
 
 
@@ -54,6 +56,7 @@ const routes: Routes = [
     ProfileComponent,
     PostComponent,
     SearchComponent,
+    NewsDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class NewsCareerComponent {
  
+  constructor(private router: Router) {
+
+  }
+
+  clickDetail() {
+    this.router.navigate(["newsDetail"])
+  }
 }
