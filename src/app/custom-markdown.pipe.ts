@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-// import marked from "marked";
 import { marked } from 'marked';
 
 @Pipe({
