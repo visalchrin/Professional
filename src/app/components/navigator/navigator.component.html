@@ -14,6 +14,7 @@
                 <input type="text" name="keyword" [(ngModel)]="keyword" placeholder="Find talents...">
             </form>
         </li>
+        <li class="header-navbar-item"><a routerLink="/trending" routerLinkActive="header-active" >Trending</a></li>
         <li class="header-navbar-item"><a routerLink="/login" routerLinkActive="header-active" >Login</a></li>
         <button *ngIf="!showMobileMenu" routerLink="/register" routerLinkActive="heder-active" >Register</button>
     </ul>

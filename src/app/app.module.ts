@@ -23,6 +23,7 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { NewsDetailComponent } from './components/news-detail/news-detail.component';
 import { CustomMarkdownPipe } from './custom-markdown.pipe';
+import { TrendingComponent } from './components/trending/trending.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,8 @@ const routes: Routes = [
   { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'search', component: SearchComponent},
-  { path: 'newsDetail', component: NewsDetailComponent}
+  { path: 'newsDetail', component: NewsDetailComponent},
+  { path: 'trending', component: TrendingComponent}
 ]
 
 
@@ -59,6 +61,7 @@ const routes: Routes = [
     SearchComponent,
     NewsDetailComponent,
     CustomMarkdownPipe,
+    TrendingComponent,
   ],
   imports: [
     BrowserModule,
