@@ -1,11 +1,15 @@
-<p>news-detail works!</p>
-<p [innerHTML]="quote | customMarkdown"></p>
-
-<p [innerHTML]="text | customMarkdown"></p>
-
-<div id="content">
-    {{ text | customMarkdown}}
+<div class="news">
+    <div class="news-headline">
+        <h1>What We Know About the Philadelphia Rowhouse Fire</h1> 
+    </div>
+    <div class="news-image">
+        <img src="https://th.bing.com/th/id/OIP.a--YjkMteqW3WRQvRI5xiAHaE7?pid=ImgDet&rs=1" alt="news image">
+    </div>
+    <div class="news-publisher">
+        <h3>Publish by: <span>Steven Kein</span></h3>
+        <h4>On: 2022-11-01 @2PM</h4>
+    </div>
+    <div class="news-content">
+        <p [innerHTML]="text | customMarkdown"></p>
+    </div>
 </div>
-
-<textarea style="width: 800px; height: 200px;" [(ngModel)]="text" name="text" id="" cols="30" rows="10"></textarea>
-<p>{{text}}</p>

@@ -15,12 +15,14 @@ export class NewsDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  onTextChange(): void {
     let content = document.getElementById('content');
     if (content != null) {
       content.innerHTML = marked.parse(`${this.text}`);
     }
   }
-
 
 
 }
