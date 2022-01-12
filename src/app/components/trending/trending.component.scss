@@ -26,6 +26,7 @@
 
     &-header {
         h3 {
+            font-size: 1.3rem;
            font-weight: bold;
            padding-left: 30px;
            margin: 10px;
@@ -64,6 +65,10 @@
 
         &-desc {
             padding-top: 10px;
+
+            span {
+                font-weight: bold;
+            }
 
         }
 
