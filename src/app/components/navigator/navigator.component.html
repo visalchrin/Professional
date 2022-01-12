@@ -23,6 +23,11 @@
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/feed" routerLinkActive="active">Community</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/News-Career" routerLinkActive="active">News</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/about-us" routerLinkActive="active">Contact Us</a></li>
+        <li class="header-navbar-item">
+            <form (ngSubmit)="onSubmit()">
+                <input type="text" name="keyword" [(ngModel)]="keyword" placeholder="Find talents...">
+            </form>
+        </li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/login" routerLinkActive="active" >Login</a></li>
         <li class="header-navbar-item"><button (click)="OnNavigate()" routerLink="/register" routerLinkActive="active">Register</button></li>
     </ol>
