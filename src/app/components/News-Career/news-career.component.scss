@@ -103,6 +103,7 @@ section{
     margin-top: -2px;
     color: #fff;
     h1 {
+        position: relative;
         padding-top: 30px;
         padding-left: 20px;
         color:rgb(255, 255, 255);
@@ -123,7 +124,7 @@ section{
             border-bottom: 5px solid #377D39;
             height: 5px;
             width: 500px;
-            left: 100px;
+            left: 50px;
             transform: translateY(27px);
 
             @include breakpoint-less(medium) {
