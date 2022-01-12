@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .news {
     padding-top: 80px;
     max-width: 700px;
@@ -10,6 +12,11 @@
         padding-right: 20px;
         font-family: "Nunito";
         font-style: italic;
+
+        @include breakpoint-less(medium) {
+            font-size: 2rem;
+            font-weight: bold;
+        }
     }
 
     &-publisher {
@@ -34,6 +41,10 @@
             width: 680px;
             border: 1px solid rgb(189, 183, 183);
             border-radius: 5px;
+
+            @include breakpoint-less(medium) {
+                width: 400px;
+            }
         }
     }
 
