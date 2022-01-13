@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { NewsDetailComponent } from './components/news-detail/news-detail.component';
 import { CustomMarkdownPipe } from './custom-markdown.pipe';
 import { TrendingComponent } from './components/trending/trending.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -71,6 +72,7 @@ const routes: Routes = [
     TooltipModule.forRoot(),
     CarouselModule.forRoot(),
     FormsModule,
+    HttpClientModule,
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { LoginService } from './../../services/login.service';
 import { Router, RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,13 +11,15 @@ export class NavigatorComponent implements OnInit {
   btn: string = '';
   keyword: string = '';
   showMobileMenu: boolean = false;
+  isAuthenticated: boolean = false;
 
-  constructor(private router: Router) { 
+  constructor(private router: Router, private loginService: LoginService) { 
     this.btn = 'hamburger';
+    
   }
 
   ngOnInit(): void {
-    
+    this.isAuthenticated = this.loginService.isAuthenticated();
   }
 
   onSubmit() {
@@ -42,6 +45,11 @@ export class NavigatorComponent implements OnInit {
     } else {
       this.btn = 'close';
     }
+  }
+
+  onClickLogout(): void {
+    this.loginService.logout();
+    this.router.navigate(['/home']);
   }
 
 }

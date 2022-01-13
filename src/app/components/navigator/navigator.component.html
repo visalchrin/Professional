@@ -16,6 +16,7 @@
         </li>
         <li class="header-navbar-item"><a routerLink="/trending" routerLinkActive="header-active" >Trending</a></li>
         <li class="header-navbar-item"><a routerLink="/login" routerLinkActive="header-active" >Login</a></li>
+        <button style="color: red; background-color:antiquewhite;" *ngIf="isAuthenticated" (click)="onClickLogout()" routerLinkActive="heder-active" >Logout</button>
         <button *ngIf="!showMobileMenu" routerLink="/register" routerLinkActive="heder-active" >Register</button>
     </ul>
     <!-- Menu For Mobile -->
