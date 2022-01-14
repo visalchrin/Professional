@@ -16,7 +16,8 @@ export class LoginService {
     private cookieService: CookieService,
     private route: Router) { }
 
-  login(auth: any) {
+  login(auth: any): void {
+    this.isAuthenticatedEvent.emit();
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -43,7 +44,7 @@ export class LoginService {
         } else {
           this.cookieService.set('access_token', result.access_token);
           this.route.navigate(["feed"]);
-          this.isAuthenticatedEvent.emit();
+          window.location.reload();
         }
         
         //localStorage.setItem('access_token', result.access_token);

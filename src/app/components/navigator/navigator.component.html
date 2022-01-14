@@ -1,36 +1,59 @@
 
 <header class="header">
     <!-- Menu For Desktop -->
-    <ul class="header-navbar header-desktop">
+
+    <ul class="header-navbar header-desktop" *ngIf="isAuthenticated; else notAuthenticated">
         <li><img class="menuBtn showMobile hide-desktop" (click)="onClickShowMenu()" src="../../../assets/{{btn}}.svg" alt="close btn"></li>
-        <li class="header-navbar-item"><a routerLink="/home" routerLinkActive="header-active">Professional</a></li>
-        <li class="header-navbar-item"><a routerLink="/profile" routerLinkActive="header-active">Profile</a></li>
         <li class="header-navbar-item"><a routerLink="/feed" routerLinkActive="header-active">Community</a></li>
-        <li class="header-navbar-item"><a routerLink="/about-us" routerLinkActive="header-active">Contact Us</a></li>
+        <li class="header-navbar-item"><a routerLink="/trending" routerLinkActive="header-active" >Trending</a></li>
         <li class="header-navbar-item"><a routerLink="/BO-NewsCareer" routerLinkActive="header-active" >BO-News</a></li>
         <li class="header-navbar-item"><a routerLink="/News-Career" routerLinkActive="header-active" >News</a></li>
+        <li class="header-navbar-item"><a routerLink="/profile" routerLinkActive="header-active">Profile</a></li>
         <li class="header-navbar-item">
             <form (ngSubmit)="onSubmit()">
                 <input type="text" name="keyword" [(ngModel)]="keyword" placeholder="Find talents...">
             </form>
         </li>
-        <li class="header-navbar-item"><a routerLink="/trending" routerLinkActive="header-active" >Trending</a></li>
-        <li class="header-navbar-item"><a routerLink="/login" routerLinkActive="header-active" >Login</a></li>
-        <button style="color: red; background-color:antiquewhite;" *ngIf="isAuthenticated" (click)="onClickLogout()" routerLinkActive="heder-active" >Logout</button>
-        <button *ngIf="!showMobileMenu" routerLink="/register" routerLinkActive="heder-active" >Register</button>
+        <li class="header-navbar-item" (click)="onClickLogout()"><a style="color: red;" routerLink="/login" routerLinkActive="header-active" >Logout</a></li>
+        <button *ngIf="!showMobileMenu && !isAuthenticated" routerLink="/register" routerLinkActive="heder-active" >Register</button>
     </ul>
+
+    <ng-template #notAuthenticated>
+        <ul class="header-navbar header-desktop">
+            <li><img class="menuBtn showMobile hide-desktop" (click)="onClickShowMenu()" src="../../../assets/{{btn}}.svg" alt="close btn"></li>
+            <li class="header-navbar-item"><a routerLink="/home" routerLinkActive="header-active">Professional</a></li>
+            <li class="header-navbar-item"><a routerLink="/about-us" routerLinkActive="header-active">Contact Us</a></li>
+            <li class="header-navbar-item" *ngIf="!isAuthenticated"><a routerLink="/login" routerLinkActive="header-active" >Login</a></li>
+            <button *ngIf="!showMobileMenu && !isAuthenticated" routerLink="/register" routerLinkActive="heder-active" >Register</button>
+        </ul>
+    </ng-template>
+    
     <!-- Menu For Mobile -->
-    <ol class=" mobile-menu hide-desktop" [ngClass]="{'show-mobile': showMobileMenu}">
-        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/home" routerLinkActive="active">Home</a></li>
+
+    <ol class=" mobile-menu hide-desktop" [ngClass]="{'show-mobile': showMobileMenu}" *ngIf="isAuthenticated; else notAuthenticatedMobile">
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/feed" routerLinkActive="active">Community</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/trending" routerLinkActive="active">trending</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/BO-NewsCareer" routerLinkActive="active">Bo-News</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/News-Career" routerLinkActive="active">News</a></li>
-        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/about-us" routerLinkActive="active">Contact Us</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/profile" routerLinkActive="active">Profile</a></li>
         <li class="header-navbar-item">
             <form (ngSubmit)="onSubmit()">
                 <input type="text" name="keyword" [(ngModel)]="keyword" placeholder="Find talents...">
+                <svg (click)="onSubmit(); OnNavigate()" style="padding-left: 10px; color: green;" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
             </form>
         </li>
-        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/login" routerLinkActive="active" >Login</a></li>
-        <li class="header-navbar-item"><button (click)="OnNavigate()" routerLink="/register" routerLinkActive="active">Register</button></li>
+        <li class="header-navbar-item" (click)="onClickLogout()"><a style="color: red;" (click)="OnNavigate()"routerLinkActive="active" >Sign out</a></li>
+        <li class="header-navbar-item" *ngIf="!isAuthenticated"><button (click)="OnNavigate()" routerLink="/register" routerLinkActive="active">Register</button></li>
     </ol>
+
+    <ng-template #notAuthenticatedMobile>
+        <ol class=" mobile-menu hide-desktop" [ngClass]="{'show-mobile': showMobileMenu}">
+            <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/home" routerLinkActive="active">Professional</a></li>
+            <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/about-us" routerLinkActive="active">Contact Us</a></li>
+            <li class="header-navbar-item" *ngIf="!isAuthenticated"><a (click)="OnNavigate()" routerLink="/login" routerLinkActive="active" >Login</a></li>
+            <li class="header-navbar-item" *ngIf="!isAuthenticated"><button (click)="OnNavigate()" routerLink="/register" routerLinkActive="active">Register</button></li>
+        </ol>
+    </ng-template>
 </header>

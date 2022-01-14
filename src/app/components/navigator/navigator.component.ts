@@ -15,11 +15,11 @@ export class NavigatorComponent implements OnInit {
 
   constructor(private router: Router, private loginService: LoginService) { 
     this.btn = 'hamburger';
+    this.isAuthenticated = loginService.isAuthenticated();
     
   }
 
   ngOnInit(): void {
-    this.isAuthenticated = this.loginService.isAuthenticated();
   }
 
   onSubmit() {
@@ -50,6 +50,7 @@ export class NavigatorComponent implements OnInit {
   onClickLogout(): void {
     this.loginService.logout();
     this.router.navigate(['/home']);
+    this.isAuthenticated = !this.isAuthenticated;
   }
 
 }

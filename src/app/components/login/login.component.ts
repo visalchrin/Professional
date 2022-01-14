@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    // window.location.reload();
     this.loginService.login(
       {
         username: this.formLogin.value.username,
