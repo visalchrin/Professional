@@ -4,7 +4,7 @@
         <h1>Join Our Community Now</h1>
     </div>
     <div class="login-container">
-        <form action="" [formGroup]="formRegister" (ngSubmit)="onLogin()">
+        <form action="" [formGroup]="formRegister" (ngSubmit)="onRegister()">
             <div class="form-group">
                 <label  for="fullname">Full Name</label>
                 <input  type="text" autocomplete="off" name="fullname" id="fullname" formControlName="fullname">
@@ -16,18 +16,24 @@
             </div>
 
             <div class="form-group">
-                <label  for="fullname">Skills:</label>
-                <input  type="text" placeholder="Example: UX/UI Designer" autocomplete="off" name="talents" id="talent" formControlName="talent">
+                <label  for="talent">Skills:</label>
+                <input  type="text" placeholder="Example: UX/UI Designer" autocomplete="off" name="talent" id="talent" formControlName="skill">
             </div>
 
             
             <div class="form-group">
-                <label  for="fullname">Experience</label>
-                <input  type="text" placeholder="Example: Junior,Senior,Expert" autocomplete="off" name="level" id="level" formControlName="level">
+                <label for="experience">Experience</label>
+                <select formControlName="experience">
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Expert">Expert</option>
+                </select>
+                <!-- <label  for="fullname">Experience</label>
+                <input  type="text" placeholder="Example: Junior,Senior,Expert" autocomplete="off" name="level" id="level" formControlName="level"> -->
             </div>
 
             <div class="form-group">
-                <label  for="fullname">What you are interested in:</label>
+                <label  for="interest">What you are interested in:</label>
                 <input  type="text" placeholder="Example: Reading book" autocomplete="off" name="interest" id="description" formControlName="description">
             </div>
 

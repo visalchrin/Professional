@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { User } from '../Models/userModel';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginService {
   @Output() isAuthenticatedEvent : EventEmitter<any> = new EventEmitter();
 
-  url: string = "http://localhost:9093/api/login";
+  url: string = "http://localhost:9093/api";
 
   constructor(
     private http: HttpClient,
@@ -33,7 +34,7 @@ export class LoginService {
 
     this.http
       .post(
-        this.url,
+        this.url + "/login",
         body.toString(),
         httpOptions
       )
@@ -49,6 +50,16 @@ export class LoginService {
         
         //localStorage.setItem('access_token', result.access_token);
       });
+  }
+
+  register(user: User): void {
+    console.log(user.fullname);
+    this.http.post(
+      this.url + "/register",
+      user
+    ).subscribe(result => {
+      console.log(result);
+    });
   }
 
   isAuthenticated(): boolean {
