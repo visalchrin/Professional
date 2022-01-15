@@ -23,6 +23,5 @@
         this.description = description;
         this.username = username;
         this.password = password;
-
     }
 }

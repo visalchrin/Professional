@@ -44,6 +44,7 @@ export class LoginService {
           console.log("Login is incompleted.");
         } else {
           this.cookieService.set('access_token', result.access_token);
+          this.cookieService.set('username', result.username);
           this.route.navigate(["feed"]);
           window.location.reload();
         }
