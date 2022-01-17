@@ -23,8 +23,11 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getUserDetailInfo('dara').subscribe((result => {
+    this.userService.getUserDetailInfo('darakok').subscribe((result => {
       console.log(result);
+      this.user = result;
+      console.log("After user: ");
+      console.log(this.user);
     }));
   }
 
