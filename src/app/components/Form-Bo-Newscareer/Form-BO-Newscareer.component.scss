@@ -2,11 +2,12 @@
 .container {
     padding-top: 80px;
     margin: 5px;
+    margin: 0 auto;
 
     &-form {
         background-color: #F6F8FA;
         border-radius: 10px;
-        padding: 10px;
+        // padding: 10px;
         margin: 0 auto;
         max-width: 700px;
         display: grid;

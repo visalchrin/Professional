@@ -25,6 +25,7 @@ import { NewsDetailComponent } from './components/news-detail/news-detail.compon
 import { CustomMarkdownPipe } from './custom-markdown.pipe';
 import { TrendingComponent } from './components/trending/trending.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 const routes: Routes = [
@@ -73,6 +74,7 @@ const routes: Routes = [
     CarouselModule.forRoot(),
     FormsModule,
     HttpClientModule,
+    NgxSkeletonLoaderModule,
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

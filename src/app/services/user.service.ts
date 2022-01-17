@@ -18,7 +18,7 @@ export class UserService {
     private http: HttpClient,
   ) { }
 
-  getUserDetailInfo(username: string){
+  getUserDetailInfo(){
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

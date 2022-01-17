@@ -7,15 +7,15 @@
     username: string;
     password: string;
 
-    constructor(
+    public constructor(
         fullname: string,
-        email: string,
+        email : string,
         skill: string,
         experience: string,
         description: string,
         username: string,
         password: string
-         ) {
+    ) {
         this.fullname = fullname;
         this.email = email;
         this.skill = skill;
