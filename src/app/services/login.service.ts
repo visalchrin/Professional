@@ -53,6 +53,23 @@ export class LoginService {
       });
   }
 
+  refreshToken():void {
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    this.http.get(
+      this.url + "/token/refresh",
+      httpOptions
+    ).subscribe((result: any) => {
+      this.cookieService.set("access_token", result.access_token);
+      console.log(this.cookieService.get("access_token"));
+    });
+  }
+
   register(user: User): void {
     console.log(user.fullname);
     this.http.post(

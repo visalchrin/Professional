@@ -175,16 +175,23 @@ section{
         &-image {
             width: 100%;
             img {
+                width: 180px;
                 height: 150px;
                 border-radius: 5px;
 
                 @include breakpoint-less(medium) {
-                    height: 50px;
+                    margin-right: 10px;
+                    height: 80px;
+                    width: 90px;
                 }
             }
         }
 
         &-content {
+
+            @include breakpoint-less(medium) {
+                margin-left: 10px;
+            }
             h4 {
                 color: #24292f;
                 font-size: 1.2rem;

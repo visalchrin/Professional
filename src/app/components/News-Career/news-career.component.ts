@@ -1,3 +1,4 @@
+import { NewsService } from './../../services/news.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
@@ -7,12 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./news-career.component.scss']
 })
 export class NewsCareerComponent {
- 
-  constructor(private router: Router) {
 
+  articles: any;
+ 
+  constructor(private router: Router, private newsService: NewsService) {
+    this.newsService.getAllNews().subscribe((articles)=> {
+      this.articles = articles;
+    });
   }
 
-  clickDetail() {
-    this.router.navigate(["newsDetail"])
+  clickDetail(id: string) {
+    console.log(id);
+    this.router.navigate([`newsDetail/${id}`]);
   }
 }

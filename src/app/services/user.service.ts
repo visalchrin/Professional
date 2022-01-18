@@ -11,7 +11,7 @@ import { User } from '../Models/userModel';
 export class UserService {
 
   // url: string = "http://localhost:9093/api/users";
-  url: string = "http://localhost:9093/api/users/?username=";
+  url: string = "http://localhost:9093/api/profile?username=";
 
   constructor(
     private cookieService: CookieService,
@@ -22,15 +22,12 @@ export class UserService {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        // Authorization: `bearer ${this.cookieService.get('access_token')}`
-        Authorization: `Bearer  ${this.cookieService.get('access_token')}`
-        //Authorization: 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXJha29rIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5My9hcGkvbG9naW4iLCJleHAiOjE2NDIzNDcwODJ9._DR7zrHJJoQ-8UQy5k5IHWXuuk4-iWi5E1BQE1CtSmo'
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
       }),
     };
     return this.http.get(
-      this.url + `${this.cookieService.get('username')}`, {
-
-      }
+      this.url + `${this.cookieService.get('username')}`,
+      httpOptions
     );
   }
 }

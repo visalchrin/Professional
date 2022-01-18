@@ -41,7 +41,7 @@ const routes: Routes = [
   { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'search', component: SearchComponent},
-  { path: 'newsDetail', component: NewsDetailComponent},
+  { path: 'newsDetail/:id', component: NewsDetailComponent},
   { path: 'trending', component: TrendingComponent}
 ]
 

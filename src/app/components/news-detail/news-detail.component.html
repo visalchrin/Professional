@@ -1,15 +1,15 @@
 <div class="news">
     <div class="news-headline">
-        <h1>What We Know About the Philadelphia Rowhouse Fire</h1> 
+        <h1>{{article.title}}</h1> 
     </div>
     <div class="news-image">
-        <img src="https://th.bing.com/th/id/OIP.a--YjkMteqW3WRQvRI5xiAHaE7?pid=ImgDet&rs=1" alt="news image">
+        <img src="{{article.image}}" alt="news image">
     </div>
     <div class="news-publisher">
-        <h3>Publish by: <span>Steven Kein</span></h3>
-        <h4>On: 2022-11-01 @2PM</h4>
+        <h3>Publish by: <span>{{article.userId}}</span></h3>
+        <h4>On: {{article.createdDate}}</h4>
     </div>
     <div class="news-content">
-        <p [innerHTML]="quote | customMarkdown"></p>
+        <p [innerHTML]="article.content | customMarkdown"></p>
     </div>
 </div>
