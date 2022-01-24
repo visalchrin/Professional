@@ -29,6 +29,19 @@ export class NewsService {
     );
   }
 
+  getPopularArticles() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.get(
+      this.url + "news/article/popularity",
+      httpOptions
+    );
+  }
+
   getAllNews() {
     let httpOptions = {
       headers: new HttpHeaders({

@@ -2,7 +2,7 @@
 
 <section>
     <div class="button">
-        <a routerLink="/Form-BO-Newscareer"><button type="button" class="btn btn-success">Post News</button></a>
+        <a routerLink="/Form-BO-Newscareer"><button id="button" type="button" class="btn btn-success">Post News</button></a>
     </div>
 
     <div class="Table-added-news">
@@ -20,8 +20,8 @@
                 <tbody>
                   <tr *ngFor="let a of articles;let indexOfelement=index;">
                     <th scope="row">{{indexOfelement + 1}}</th>
-                    <td>{{a.title}}</td>
-                    <td>{{a.content}}</td>
+                    <td><p id="title" >{{a.title}}</p></td>
+                    <td><p id="content">{{a.content}}</p></td>
                     <td>Edit</td>
                   </tr>
                 </tbody>

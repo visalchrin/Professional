@@ -44,6 +44,7 @@ export class LoginService {
           console.log("Login is incompleted.");
         } else {
           this.cookieService.set('access_token', result.access_token);
+          this.cookieService.set('refresh_token', result.refresh_token);
           this.cookieService.set('username', result.username);
           this.route.navigate(["feed"]);
           window.location.reload();
@@ -58,7 +59,7 @@ export class LoginService {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+        Authorization: `Bearer ${this.cookieService.get('refresh_token')}`
       }),
     };
     this.http.get(
@@ -66,6 +67,7 @@ export class LoginService {
       httpOptions
     ).subscribe((result: any) => {
       this.cookieService.set("access_token", result.access_token);
+      this.cookieService.set("refresh_token", result.refresh_token);
       console.log(this.cookieService.get("access_token"));
     });
   }

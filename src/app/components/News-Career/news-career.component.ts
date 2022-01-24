@@ -10,10 +10,15 @@ import { Component } from '@angular/core';
 export class NewsCareerComponent {
 
   articles: any;
+  popular: any;
  
   constructor(private router: Router, private newsService: NewsService) {
     this.newsService.getAllNews().subscribe((articles)=> {
       this.articles = articles;
+    });
+
+    this.newsService.getPopularArticles().subscribe((data) => {
+      this.popular = data;
     });
   }
 

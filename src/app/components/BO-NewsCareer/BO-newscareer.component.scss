@@ -1,10 +1,15 @@
+@import "../../../styles.scss";
+
 .button{
     padding-top: 90px;
     margin-left: 10%;
 }
 
-button{
+button, #button{
     width: 130px;
+    @include breakpoint-less(medium) {
+        width: 170px;
+    }
 }
 
 .Table-added-news{
@@ -18,4 +23,26 @@ button{
     width: 90%;
     align-content: center;
     margin-left: 5.5%;
+}
+
+#title {
+    display: block;
+    width: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include breakpoint(medium) {
+        width: 230px;
+    }
+}
+
+#content {
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include breakpoint(medium) {
+        width: 500px;
+    }
 }

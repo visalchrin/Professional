@@ -4,29 +4,14 @@
             <p>Most popular</p>
             <h1>Stay up to date with the latest news about your career</h1>
             <div class="container-latestPost-content">
-                <div class="card" (click)="clickDetail('123')" style="width: 18rem; height: 300px;">
-                    <img src="https://ichef.bbci.co.uk/images/ic/1920x1080/p0643c3v.jpg" class="card-img-top" alt="...">
+                <div class="card" (click)="clickDetail(p.id)" style="width: 18rem; height: 300px;" *ngFor="let p of popular">
+                    <img src="{{p.image}}" class="card-img-top" alt="image of article">
                     <div class="card-body">
-                      <h5>How to answer the tough interview questions?</h5>
-                      <h6>Editor: <span>Steven Kien</span></h6>
+                      <h5>{{p.title}}</h5>
+                      <h6>Publish on: <span>{{p.createdDate}}</span></h6>
                     </div>
                 </div>
 
-                <div class="card" style="width: 18rem; height: 300px;">
-                    <img src="https://image.freepik.com/free-photo/female-hand-typing-keyboard-laptop_1150-15740.jpg"  class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Five Way Working from Home Can Save your life</h5>
-                      <h6>Editor: <span>Steven Kien</span></h6>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem; height: 300px;">
-                    <img src="https://th.bing.com/th/id/R.7e11c4e38df8c1264c1b83b3991a47c1?rik=LIqKrZXOtNt5FA&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fb%2f9%2f3%2f1222498-top-adventure-wallpapers-2739x1829-for-full-hd.jpg&ehk=TPv4%2fLMJf1Io9AQvOI9aK4uknWcb52oz5g0RTdOq0AI%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">The Strangeset Adventure in team building</h5>
-                      <h6>Editor: <span>Steven Kien</span></h6>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -41,9 +26,9 @@
         <img src="{{a.image}}" alt="Image">
       </div>
       <div class="card-content">
-        <h4>{{a.title}} {{a.id}}</h4>
-        <p>{{a.content}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, reprehenderit in? Facilis accusantium aliquid sequi, eius itaque porro consectetur aliquam veniam corporis qui nobis cumque, quo magni tenetur ratione natus.</p>
-        <h5>Editor: <span>{{a.userId}}</span></h5>
+        <h4>{{a.title}}</h4>
+        <p>{{a.content}}</p>
+        <h5>On: <span>{{a.createdDate}}</span></h5>
       </div>
     </div>
   
