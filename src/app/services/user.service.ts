@@ -16,7 +16,7 @@ export class UserService {
     private http: HttpClient,
   ) { }
 
-  getUserDetailInfo(){
+  getUserDetailInfo(username: string){
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export class UserService {
       }),
     };
     return this.http.get(
-      this.url + `${this.cookieService.get('username')}`,
+      this.url + `${username}`,
       httpOptions
     );
   }

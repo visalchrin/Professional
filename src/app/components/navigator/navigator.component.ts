@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from './../../services/login.service';
 import { Router, RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,10 @@ export class NavigatorComponent implements OnInit {
   showMobileMenu: boolean = false;
   isAuthenticated: boolean = false;
 
-  constructor(private router: Router, private loginService: LoginService) { 
+  constructor(
+    private router: Router, 
+    private loginService: LoginService,
+    private cookieService: CookieService) { 
     this.btn = 'hamburger';
     this.isAuthenticated = loginService.isAuthenticated();
 
@@ -28,6 +32,10 @@ export class NavigatorComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  onClickProfile() {
+    this.router.navigate([`profile/${this.cookieService.get('username')}`]);
   }
 
   onSubmit() {

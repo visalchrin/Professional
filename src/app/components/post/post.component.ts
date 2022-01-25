@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  user: any;
+  //user: any;
   @Input() posts: any;
 
   constructor(private userService: UserService) {
-    this.userService.getUserDetailInfo().subscribe((result) => {
-      this.user = result;
-    });
+    //this.userService.getUserDetailInfo().subscribe((result) => {
+     // this.user = result;
+   // });
    }
 
   ngOnInit(): void {
