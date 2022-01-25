@@ -1,5 +1,6 @@
+import { PostService } from './../../services/post.service';
 import { UserService } from './../../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/Models/userModel';
 
 @Component({
@@ -11,18 +12,19 @@ export class ProfileComponent implements OnInit {
 
   user: any = null;
   loading:boolean = true;
+  posts: any;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private postService: PostService
   ) { 
-    // this.userService.getUserDetailInfo.subscribe((result: any) => {
-    //   result.forEach((d: any) => {
-    //     this.categories.push({ id: d.id, name: d.name });
-    //   });
-    // });
     if (this.user == null) {
       this.loading = true;
     }
+
+    this.postService.getAllPostByOwnerId().subscribe((data) => {
+      this.posts = data;
+    });
     
   }
 
