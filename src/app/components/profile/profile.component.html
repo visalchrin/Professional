@@ -21,7 +21,10 @@
             <h4>{{user.fullname}}</h4>
             <h3>Talents: <span>{{user.skill}}</span></h3>
             <p>Interested in: <span>{{user.description}}</span></p>
+            <h5>Followers: <span>{{numFollower}} people</span></h5>
             <h5>Contact: <span>{{user.email}}</span></h5>
+            <button *ngIf="!isFollowed && !isLoginUser" (click)="onClickFollow()">Follow</button>
+            <button *ngIf="isFollowed && !isLoginUser" (click)="onClickUnfollow()" style="background-color: red; margin-left: 10px;">UnFollow</button>
         </div>
     </div>
 </div>

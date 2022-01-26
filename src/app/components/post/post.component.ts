@@ -1,5 +1,6 @@
 import { UserService } from './../../services/user.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,13 +11,19 @@ export class PostComponent implements OnInit {
   //user: any;
   @Input() posts: any;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private router: Router) {
     //this.userService.getUserDetailInfo().subscribe((result) => {
      // this.user = result;
    // });
    }
 
   ngOnInit(): void {
+  }
+
+  onProfileClick(username: string): void {
+    this.router.navigate([`profile/${username}`]);
   }
 
   onClickLike(id: string): void {

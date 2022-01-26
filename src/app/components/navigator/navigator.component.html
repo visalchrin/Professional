@@ -11,7 +11,7 @@
         <li class="header-navbar-item"><a (click)="onClickProfile()" routerLinkActive="header-active">Profile</a></li>
         <li class="header-navbar-item">
             <form (ngSubmit)="onSubmit()">
-                <input type="text" name="keyword" [(ngModel)]="keyword" placeholder="Find talents...">
+                <input type="text" name="keyword" [(ngModel)]="keyword" placeholder="Find talents (UI/UX Designer)...">
             </form>
         </li>
         <li class="header-navbar-item" (click)="onClickLogout()"><a style="color: red;" routerLink="/login" routerLinkActive="header-active" >Logout</a></li>

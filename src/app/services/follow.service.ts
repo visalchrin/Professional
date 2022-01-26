@@ -1,35 +1,20 @@
-import { UserService } from './user.service';
+import { CookieService } from 'ngx-cookie-service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class FollowService {
 
-  url: string = "http://localhost:9093/api/";
+  private url = "http://localhost:9093/api/follow";
+
   constructor(
     private http: HttpClient,
-    private cookieService: CookieService,
-    private userService: UserService
+    private cookieService: CookieService
   ) { }
 
-  getAllPosts() {
-    
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${this.cookieService.get('access_token')}`
-      }),
-    };
-    return this.http.get(
-      this.url + "post/getAllPosts",
-      httpOptions
-    );
-  }
-  createPost(data: any) {
-
+  follow(data: any) {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -37,23 +22,51 @@ export class PostService {
       }),
     };
     return this.http.post(
-      this.url + "post/create",
+      this.url + "/add",
       data,
       httpOptions
     );
   }
 
-  getAllPostByOwnerId(username: string) {
+  unFollow(data: any) {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         Authorization: `Bearer ${this.cookieService.get('access_token')}`
       }),
     };
-    return this.http.get(
-      this.url + `post/getAllPostsByOwnerId?username=${username}`,
+    return this.http.post(
+      this.url + "/unfollow",
+      data,
       httpOptions
     );
   }
 
+  isFollowed(data: any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.post(
+      this.url + "/isFollowed",
+      data,
+      httpOptions
+    );
+  }
+
+  countFollower(data: any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.post(
+      this.url + "/followers/count",
+      data,
+      httpOptions
+    );
+  }
 }

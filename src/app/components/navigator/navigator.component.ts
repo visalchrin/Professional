@@ -35,13 +35,14 @@ export class NavigatorComponent implements OnInit {
   }
 
   onClickProfile() {
+    // window.location.reload();
     this.router.navigate([`profile/${this.cookieService.get('username')}`]);
   }
 
   onSubmit() {
     // When user search something
     console.log(this.keyword);
-    this.router.navigate(["search"]);
+    this.router.navigate([`search/${this.keyword}`]);
     this.keyword = "";
   }
 

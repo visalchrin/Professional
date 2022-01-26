@@ -1,42 +1,15 @@
 <div class="container">
-    <div class="profile">
+    <div class="profile" (click)="onClickProfile(user.username)" *ngFor="let user of users;">
         <div class="profile-container">
             <div class="profile-image">
                 <img src="../../../assets/hero_image.jpg" alt="profile picuture">
             </div>
             <div class="profile-info">
-                <h4>Dial Kevin</h4>
-                <h3>Talents: <span> Web developer</span></h3>
-                <p>Hello, I am in love with technology and enjoy to be here. Everthing happens by desing not by accident.</p>
-                <h5>Contact: <span>visalchrin@gmail.com</span></h5>
-            </div>
-        </div>
-    </div>
-    
-    <div class="profile">
-        <div class="profile-container">
-            <div class="profile-image">
-                <img src="../../../assets/hero_image.jpg" alt="profile picuture">
-            </div>
-            <div class="profile-info">
-                <h4>Dial Kevin</h4>
-                <h3>Talents: <span> Web developer</span></h3>
-                <p>Hello, I am in love with technology and enjoy to be here. Everthing happens by desing not by accident.</p>
-                <h5>Contact: <span>visalchrin@gmail.com</span></h5>
-            </div>
-        </div>
-    </div>
-    
-    <div class="profile">
-        <div class="profile-container">
-            <div class="profile-image">
-                <img src="../../../assets/hero_image.jpg" alt="profile picuture">
-            </div>
-            <div class="profile-info">
-                <h4>Dial Kevin</h4>
-                <h3>Talents: <span> Web developer</span></h3>
-                <p>Hello, I am in love with technology and enjoy to be here. Everthing happens by desing not by accident.</p>
-                <h5>Contact: <span>visalchrin@gmail.com</span></h5>
+                <h4>{{user.fullname}}</h4>
+                <h3>Talents: <span> {{user.skill}}</span></h3>
+                <h3 style="padding-top: 12px;">Experience: <span> {{user.experience}}</span></h3>
+                <p>{{user.description}}</p>
+                <h5>Contact: <span>{{user.email}}</span></h5>
             </div>
         </div>
     </div>

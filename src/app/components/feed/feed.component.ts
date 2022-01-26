@@ -12,6 +12,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class FeedComponent implements OnInit {
   modalRef?: BsModalRef;
   formPost: FormGroup;
+  posts: any;
   
   constructor(
     private modalService: BsModalService,
@@ -20,6 +21,13 @@ export class FeedComponent implements OnInit {
     private cookieService: CookieService) {
     this.formPost = fb.group({
       content: new FormControl(null)
+    })
+
+    this.posts = null;
+    
+    // get all posts
+    this.postService.getAllPosts().subscribe((result: any)=> {
+      this.posts = result;
     })
   }
 
