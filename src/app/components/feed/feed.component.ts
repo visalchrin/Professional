@@ -13,6 +13,7 @@ export class FeedComponent implements OnInit {
   modalRef?: BsModalRef;
   formPost: FormGroup;
   posts: any;
+  loading:boolean = true;
   
   constructor(
     private modalService: BsModalService,
@@ -23,12 +24,10 @@ export class FeedComponent implements OnInit {
       content: new FormControl(null)
     })
 
-    this.posts = null;
-    
-    // get all posts
-    this.postService.getAllPosts().subscribe((result: any)=> {
+    this.postService.getAllPostFromFollowing().subscribe((result: any) => {
       this.posts = result;
-    })
+      this.loading = false;
+    });
   }
 
   ngOnInit(): void {
@@ -49,7 +48,4 @@ export class FeedComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
-
-  
-
 }

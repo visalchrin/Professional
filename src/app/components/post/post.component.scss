@@ -44,6 +44,22 @@
 
     }
 
+    &-enagement {
+        div {
+            display: flex;
+            padding: 3px;
+            padding-top: 3px;
+            h5 {
+                margin-top: 3px;
+                margin-right: 12px;
+                font-size: 1rem;
+            }
+        }
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
     &-reaction {
         padding: 5px;
         display: flex;

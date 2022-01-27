@@ -1,3 +1,5 @@
+import { CookieService } from 'ngx-cookie-service';
+import { LikeService } from './../../services/like.service';
 import { UserService } from './../../services/user.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,6 +14,8 @@ export class PostComponent implements OnInit {
   @Input() posts: any;
 
   constructor(
+    private cookieService: CookieService,
+    private likeService: LikeService,
     private userService: UserService,
     private router: Router) {
     //this.userService.getUserDetailInfo().subscribe((result) => {
@@ -31,12 +35,41 @@ export class PostComponent implements OnInit {
     if (element != null) {
       if (element.style.color === 'orange') {
         element.style.color = 'black';
+        //element.style.color = 'orange';
+        this.likeService.unlike({
+          username: this.cookieService.get("username"),
+          postId: id
+        }).subscribe(result => {
+          console.log(result)
+        });
+        const like_number = document.getElementById(`like${id}`);
+        if (like_number != null) {
+          let num = like_number.textContent;
+          if (num != null) {
+            like_number.innerHTML = `${parseInt(num) - 1}`;
+          }
+        }
+        
       } else {
         element.style.color = 'orange';
+        this.likeService.like({
+          username: this.cookieService.get("username"),
+          postId: id
+        }).subscribe(result => {
+          console.log(result)
+        });
+
+        const like_number = document.getElementById(`like${id}`);
+        if (like_number != null) {
+          let num = like_number.textContent;
+          if (num != null) {
+            like_number.innerHTML = `${parseInt(num) + 1}`;
+          }
+        }
       }
     }
     
-    console.log(element);
+    //console.log(element);
   }
 
   onClickComment(postId: string): void {

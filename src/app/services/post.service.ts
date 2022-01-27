@@ -56,4 +56,17 @@ export class PostService {
     );
   }
 
+  getAllPostFromFollowing() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.get(
+      this.url + `post/getPostFromFollowing?username=${this.cookieService.get("username")}`,
+      httpOptions
+    );
+  }
+
 }
