@@ -1,7 +1,7 @@
 import { CookieService } from 'ngx-cookie-service';
 import { LikeService } from './../../services/like.service';
 import { UserService } from './../../services/user.service';
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,6 +23,10 @@ export class PostComponent implements OnInit {
    // });
    }
 
+   ngOnChanges() {
+    console.log(this.posts);
+  }
+
   ngOnInit(): void {
   }
 
@@ -35,7 +39,7 @@ export class PostComponent implements OnInit {
     if (element != null) {
       if (element.style.color === 'orange') {
         element.style.color = 'black';
-        //element.style.color = 'orange';
+        // unlike post and decrease like count by 1
         this.likeService.unlike({
           username: this.cookieService.get("username"),
           postId: id
@@ -51,6 +55,8 @@ export class PostComponent implements OnInit {
         }
         
       } else {
+
+        // like post and increase like count by 1
         element.style.color = 'orange';
         this.likeService.like({
           username: this.cookieService.get("username"),
@@ -68,8 +74,6 @@ export class PostComponent implements OnInit {
         }
       }
     }
-    
-    //console.log(element);
   }
 
   onClickComment(postId: string): void {

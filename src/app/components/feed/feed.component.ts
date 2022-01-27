@@ -34,14 +34,15 @@ export class FeedComponent implements OnInit {
   }
 
   OnClickNewPost(): void {
-    console.log("Post clicke");
+    console.log("Post click");
     console.log(this.formPost.value.content);
 
     this.postService.createPost({
       content: this.formPost.value.content,
       username: this.cookieService.get("username")
     }).subscribe((result: any) => {
-      console.log(result);
+      // add new post at the beginning of list of posts
+      this.posts.unshift(result);
     });
     this.modalRef?.hide();
   }

@@ -47,6 +47,7 @@ export class ProfileComponent implements OnInit {
 
       this.postService.getAllPostByOwnerId(this.username).subscribe((data) => {
         this.posts = data;
+        this.loading = false;
       });
     }
 
@@ -80,7 +81,6 @@ export class ProfileComponent implements OnInit {
       this.userService.getUserDetailInfo(this.username).subscribe((result => {
         console.log(result);
         this.user = result;
-        this.loading = false;
         console.log("After user: ");
         console.log(this.user);
       }));
