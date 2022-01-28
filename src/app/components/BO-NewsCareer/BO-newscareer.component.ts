@@ -8,13 +8,21 @@ import { Component } from '@angular/core';
 })
 export class BoNewsCareerComponent {
   articles: any;
+  loading: boolean = true;
 
   constructor(
     private newsService: NewsService
   ) {
     this.newsService.getAllNews().subscribe((articles) => {
       this.articles = articles;
+      this.loading = false;
       console.log(articles);
+    });
+  }
+
+  onDeleteNews(newsId: string) {
+    this.newsService.deleteNewsById({id: newsId}).subscribe((data) => {
+      this.articles = this.articles.filter((n: any) => n.id != newsId);
     });
   }
   

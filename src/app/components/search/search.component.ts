@@ -10,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchComponent implements OnInit {
   users: any;
   query: any;
+  loading: boolean = true;
+  notFound: boolean = false;
   constructor(
     private searchService: SearchService,
     private route: ActivatedRoute,
@@ -19,7 +21,12 @@ export class SearchComponent implements OnInit {
     if (this.route.snapshot.paramMap.get("query") != null) {
       this.query = this.route.snapshot.paramMap.get("query");
       this.searchService.search({query: this.query}).subscribe((data: any) => {
-        this.users = data;
+        this.loading = false;
+        if(data.length == 0) {
+          this.notFound = true;
+        } else {
+          this.users = data;
+        }
       })
     }
    }
@@ -29,6 +36,10 @@ export class SearchComponent implements OnInit {
 
   onClickProfile(username: string) {
     this.router.navigate([`profile/${username}`]);
+  }
+
+  OnClickHome() {
+    this.router.navigate(["/feed"]);
   }
 
 }

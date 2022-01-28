@@ -35,7 +35,6 @@ export class NavigatorComponent implements OnInit {
   }
 
   onClickProfile() {
-    // window.location.reload();
     this.router.navigate([`profile/${this.cookieService.get('username')}`]);
   }
 

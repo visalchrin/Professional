@@ -68,4 +68,20 @@ export class NewsService {
       httpOptions
     );
   }
+
+  deleteNewsById(data: any) {
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.post(
+      "http://localhost:9093/api/news/delete",
+      data,
+      httpOptions
+    );
+  }
+
 }

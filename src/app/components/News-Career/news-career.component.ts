@@ -11,10 +11,12 @@ export class NewsCareerComponent {
 
   articles: any;
   popular: any;
+  loading: boolean = true;
  
   constructor(private router: Router, private newsService: NewsService) {
     this.newsService.getAllNews().subscribe((articles)=> {
       this.articles = articles;
+      this.loading = false;
     });
 
     this.newsService.getPopularArticles().subscribe((data) => {

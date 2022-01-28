@@ -1,8 +1,38 @@
 <div class="container">
+
+    <!-- While waiting data load -->
+    <ngx-skeleton-loader *ngIf="loading"
+    count="7"
+    [theme]="{
+        'display': 'grid',
+        'grid-template-column': '1fr',
+        'margin': '0 auto',
+        'width': '700px',
+        'margin-top': '20px',
+      'border-radius': '5px',
+      height: '100px',
+      border: '1px solid white'
+    }"
+  ></ngx-skeleton-loader>
+
+    <div class="profile" *ngIf="notFound">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="../../../assets/404.jpg" alt="Not found">
+            </div>
+            <div class="profile-info">
+                <h4>Nothing found!</h4>
+                <h3>Please try different keywords!</h3>
+                <h5>Example: Digital Marketing...</h5>
+                <button (click)="OnClickHome()" style="margin-top: 20px;">Go home</button>
+            </div>
+        </div>
+    </div>
+
     <div class="profile" (click)="onClickProfile(user.username)" *ngFor="let user of users;">
         <div class="profile-container">
             <div class="profile-image">
-                <img src="../../../assets/hero_image.jpg" alt="profile picuture">
+                <img src="{{user.profile}}" alt="profile picuture">
             </div>
             <div class="profile-info">
                 <h4>{{user.fullname}}</h4>

@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { PostService } from './../../services/post.service';
 import { Component, OnInit, TemplateRef } from '@angular/core';
@@ -14,11 +15,13 @@ export class FeedComponent implements OnInit {
   formPost: FormGroup;
   posts: any;
   loading:boolean = true;
+  user: any;
   
   constructor(
     private modalService: BsModalService,
     private fb: FormBuilder,
     private postService: PostService,
+    private userService: UserService,
     private cookieService: CookieService) {
     this.formPost = fb.group({
       content: new FormControl(null)
@@ -28,6 +31,10 @@ export class FeedComponent implements OnInit {
       this.posts = result;
       this.loading = false;
     });
+
+    this.userService.getUserDetailInfo(this.cookieService.get("username")).subscribe((data)=>{
+      this.user = data;
+    })
   }
 
   ngOnInit(): void {
