@@ -15,7 +15,7 @@
 
     <div *ngIf="!loading" class="profile-container">
         <div class="profile-image">
-            <img src="../../../assets/hero_image.jpg" alt="profile picuture">
+            <img src="{{user.profile}}" alt="profile picuture">
         </div>
         <div class="profile-info">
             <h4>{{user.fullname}}</h4>
@@ -23,6 +23,7 @@
             <p>Interested in: <span>{{user.description}}</span></p>
             <h5>Followers: <span>{{numFollower}} people</span></h5>
             <h5>Contact: <span>{{user.email}}</span></h5>
+            <a *ngIf="isLoginUser" (click)="onClickEditInfo()">Edit Information</a>
             <button *ngIf="!isFollowed && !isLoginUser" (click)="onClickFollow()">Follow</button>
             <button *ngIf="isFollowed && !isLoginUser" (click)="onClickUnfollow()" style="background-color: red; margin-left: 10px;">UnFollow</button>
         </div>

@@ -45,7 +45,10 @@ export class FeedComponent implements OnInit {
       this.posts.unshift(result);
     });
     this.modalRef?.hide();
+
+    this.formPost.reset();
   }
+
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }

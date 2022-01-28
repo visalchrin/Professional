@@ -26,6 +26,7 @@ import { CustomMarkdownPipe } from './custom-markdown.pipe';
 import { TrendingComponent } from './components/trending/trending.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { EditInfoComponent } from './components/edit-info/edit-info.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'News-Career', component: NewsCareerComponent},
   { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
   { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
+  { path: 'profile/edit', component: EditInfoComponent},
   { path: 'profile/:username', component: ProfileComponent},
   { path: 'search/:query', component: SearchComponent},
   { path: 'newsDetail/:id', component: NewsDetailComponent},
@@ -64,6 +66,7 @@ const routes: Routes = [
     NewsDetailComponent,
     CustomMarkdownPipe,
     TrendingComponent,
+    EditInfoComponent,
   ],
   imports: [
     BrowserModule,

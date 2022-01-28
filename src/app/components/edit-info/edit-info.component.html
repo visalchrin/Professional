@@ -1,0 +1,45 @@
+<div class="login">
+    <div class="login-logo">
+        <img src="../../../assets/broadcast.svg" class="logo" alt="logo">
+        <h1>Edit Personal Information</h1>
+    </div>
+    <div class="login-container">
+        <form action="" [formGroup]="formEditInfo" (ngSubmit)="onEdit()">
+            <div class="form-group">
+                <label  for="fullname">Full Name</label>
+                <input type="text" autocomplete="off" name="fullname" id="fullname" formControlName="fullname">
+            </div>
+
+            <div class="form-group">
+                <label  for="fullname">Email Address</label>
+                <input  type="email" placeholder="example@gmail.com" autocomplete="off" name="email" id="email" formControlName="email">
+            </div>
+
+            <div class="form-group">
+                <label  for="talent">Skills:</label>
+                <input  type="text" placeholder="Example: UX/UI Designer" autocomplete="off" name="talent" id="talent" formControlName="skill">
+            </div>
+
+            
+            <div class="form-group">
+                <label for="experience">Experience</label>
+                <select formControlName="experience">
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Expert">Expert</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label  for="interest">What you are interested in:</label>
+                <input  type="text" placeholder="Example: Reading book" autocomplete="off" name="interest" id="description" formControlName="description">
+            </div>
+
+            <div class="form-group">
+                <label  for="username">Profile Image Url</label>
+                <input type="text" autocomplete="off" name="username" id="username" formControlName="profile">
+            </div>
+            <button class="form-control" (click)="onEdit()" class="btn">Update Now</button>
+        </form>
+    </div>
+</div>

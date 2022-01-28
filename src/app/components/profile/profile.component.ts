@@ -4,7 +4,7 @@ import { PostService } from './../../services/post.service';
 import { UserService } from './../../services/user.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/Models/userModel';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   numFollower: any; 
 
   constructor(
+    private router: Router,
     private userService: UserService,
     private postService: PostService,
     private route: ActivatedRoute,
@@ -51,6 +52,11 @@ export class ProfileComponent implements OnInit {
       });
     }
 
+    
+    this.userService.getUserDetailInfo(this.username).subscribe((result => {
+      this.user = result;
+    }));
+
     this.followService.isFollowed({
       'username': this.username,
       'follow': this.cookieService.get("username")
@@ -60,8 +66,6 @@ export class ProfileComponent implements OnInit {
       console.log(result);
     });
 
-    console.log(this.isFollowed);
-    
   }
 
   ngOnInit(): void {
@@ -79,10 +83,7 @@ export class ProfileComponent implements OnInit {
       });
 
       this.userService.getUserDetailInfo(this.username).subscribe((result => {
-        console.log(result);
         this.user = result;
-        console.log("After user: ");
-        console.log(this.user);
       }));
     }
     
@@ -122,6 +123,10 @@ export class ProfileComponent implements OnInit {
         console.log(result);
       }));
     }
+  }
+
+  onClickEditInfo() {
+      this.router.navigate(["/profile/edit"]);
   }
 
 }

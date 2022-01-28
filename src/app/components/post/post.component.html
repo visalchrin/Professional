@@ -3,7 +3,7 @@
     <div class="post" *ngFor="let post of posts">
         <div class="post-owner" (click)="onProfileClick(post.ownerUsername)">
             <div class="post-owner-profile">
-                <img src="../../../assets/hero_image.jpg" alt="user-profile">
+                <img src="{{post.profile}}" alt="user-profile">
                 <div>
                     <h5>{{post.ownerName}}</h5>
                     <h6> {{post.createdDate}} </h6>

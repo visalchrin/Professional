@@ -16,6 +16,21 @@ export class UserService {
     private http: HttpClient,
   ) { }
 
+
+  editUserInfo(data:any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.post(
+      "http://localhost:9093/api/profile/edit",
+      data,
+      httpOptions
+    );
+  }
+
   getUserDetailInfo(username: string){
     let httpOptions = {
       headers: new HttpHeaders({
