@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .posts {
     max-width: 700px;
     margin: 0 auto;
@@ -99,9 +101,14 @@
             height: 40px;
             border-radius: 50%;
         }
-        input {
-            width: 100%;
-            margin-left: 15px;
+        form {
+            input {
+                width: 500px;
+                margin-left: 15px;
+                @include breakpoint-less(medium) {
+                    width: 240px;
+                }
+            }
         }
     }
 

@@ -1,8 +1,10 @@
+import { CommentService } from './../../services/comment.service';
 import { CookieService } from 'ngx-cookie-service';
 import { LikeService } from './../../services/like.service';
 import { UserService } from './../../services/user.service';
 import {Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-post',
@@ -12,12 +14,19 @@ import { Router } from '@angular/router';
 export class PostComponent implements OnInit {
   //user: any;
   @Input() posts: any;
+  comments: any;
+  formComment: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private cookieService: CookieService,
     private likeService: LikeService,
     private userService: UserService,
+    private commentService: CommentService,
     private router: Router) {
+      this.formComment = fb.group({
+        comment: new FormControl(null)
+      });
     //this.userService.getUserDetailInfo().subscribe((result) => {
      // this.user = result;
    // });
@@ -78,14 +87,45 @@ export class PostComponent implements OnInit {
 
   onClickComment(postId: string): void {
     console.log("Click comment");
+    console.log(postId);
+    // this.commentService.getCommentsByPostId(postId).subscribe((data: any) => {
+    //   this.comments = data;
+    //   console.log(data);
+    // });
+    // Figure out why it is not display comments
     const element = document.getElementById(`comment${postId}`);
+    console.log(element);
     if (element != null) {
       if (element.style.display === "none") {
         element.style.display = "block";
+        this.commentService.getCommentsByPostId(postId).subscribe((data: any) => {
+          this.comments = data;
+          console.log(data);
+        })
       } else {
         element.style.display = "none";
       }
     }
+  }
+
+  onClickPostComment(postId: string) {
+    this.commentService.createComment({
+      username: this.cookieService.get("username"),
+      postId: postId,
+      comment: this.formComment.value.comment
+    }).subscribe((data)=> {
+      this.comments.unshift(data);
+    });
+
+    const comment_number = document.getElementById(`c${postId}`);
+        if (comment_number != null) {
+          let num = comment_number.textContent;
+          if (num != null) {
+            comment_number.innerHTML = `${parseInt(num) + 1}`;
+          }
+    }
+
+    this.formComment.reset();
   }
 
 }
