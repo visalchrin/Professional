@@ -33,7 +33,7 @@
         <div style="display: none; margin-bottom: 20px;" id="comment{{post.id}}">
             <!-- For add new comment -->
             <div class="post-commenter">
-                <img src="../../../assets/opportunity.jpg" alt="profile picture">
+                <img src="{{user.profile}}" alt="profile picture">
                 <form [formGroup]="formComment" (ngSubmit)="onClickPostComment(post.id)">
                     <input type="text" placeholder="Add your comment" formControlName="comment">
                 </form>
@@ -47,10 +47,10 @@
             <div >
                 <div class="post-comment" *ngFor="let com of comments">
                     <div class="post-comment-profile">
-                        <img src="../../../assets/opportunity.jpg" alt="profile picture">
+                        <img src="{{com.profile}}" alt="profile picture">
                     </div>
                     <div class="post-comment-content">
-                        <h5>{{com.userId}} @ {{com.createdDate}}</h5> 
+                        <h5>{{com.fullname}} @ {{com.createdDate}}</h5> 
                         <p>{{com.comment}}</p>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) { 
     this.formRegister = fb.group({
       fullname: new FormControl(null),
@@ -42,5 +44,6 @@ export class RegisterComponent implements OnInit {
       this.formRegister.value.password
     );
    this.loginService.register(user);
+   this.router.navigate(["/login"]);
   }
 }

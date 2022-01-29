@@ -33,7 +33,7 @@ import { InvolveComponent } from './components/involve/involve.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'hello', component: NavigatorComponent},
+  { path: 'navigator', component: NavigatorComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent},

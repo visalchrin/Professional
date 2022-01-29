@@ -16,6 +16,7 @@ export class PostComponent implements OnInit {
   @Input() posts: any;
   comments: any;
   formComment: FormGroup;
+  user: any;
 
   constructor(
     private fb: FormBuilder,
@@ -27,9 +28,10 @@ export class PostComponent implements OnInit {
       this.formComment = fb.group({
         comment: new FormControl(null)
       });
-    //this.userService.getUserDetailInfo().subscribe((result) => {
-     // this.user = result;
-   // });
+
+      this.userService.getUserDetailInfo(this.cookieService.get("username")).subscribe((data)=> {
+        this.user = data;
+      })
    }
 
    ngOnChanges() {
@@ -86,13 +88,8 @@ export class PostComponent implements OnInit {
   }
 
   onClickComment(postId: string): void {
-    console.log("Click comment");
-    console.log(postId);
-    // this.commentService.getCommentsByPostId(postId).subscribe((data: any) => {
-    //   this.comments = data;
-    //   console.log(data);
-    // });
-    // Figure out why it is not display comments
+    //console.log("Click comment");
+    //console.log(postId);
     const element = document.getElementById(`comment${postId}`);
     console.log(element);
     if (element != null) {

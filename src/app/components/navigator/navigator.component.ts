@@ -20,14 +20,6 @@ export class NavigatorComponent implements OnInit {
     private cookieService: CookieService) { 
     this.btn = 'hamburger';
     this.isAuthenticated = loginService.isAuthenticated();
-
-    if (this.loginService.isAuthenticated()) {
-      setInterval(()=> {
-        this.loginService.refreshToken();
-        console.log("refresh token is called");
-      }, 9*60*1000);
-    }
-    
   }
 
 

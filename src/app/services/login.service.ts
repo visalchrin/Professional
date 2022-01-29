@@ -11,6 +11,7 @@ export class LoginService {
   @Output() isAuthenticatedEvent : EventEmitter<any> = new EventEmitter();
 
   url: string = "http://localhost:9093/api";
+  data: any;
 
   constructor(
     private http: HttpClient,
@@ -18,6 +19,7 @@ export class LoginService {
     private route: Router) { }
 
   login(auth: any): void {
+
     this.isAuthenticatedEvent.emit();
     let httpOptions = {
       headers: new HttpHeaders({
@@ -43,18 +45,39 @@ export class LoginService {
         if (result.access_token == null) {
           console.log("Login is incompleted.");
         } else {
+          this.data = result;
           this.cookieService.set('access_token', result.access_token);
           this.cookieService.set('refresh_token', result.refresh_token);
           this.cookieService.set('username', result.username);
           this.route.navigate(["feed"]);
           window.location.reload();
+          this.startRefreshTokenTimer();
         }
-        
-        //localStorage.setItem('access_token', result.access_token);
       });
   }
 
+  // helper methods
+
+  private refreshTokenTimeout : any;
+
+  private startRefreshTokenTimer() {
+      // parse json object from base64 encoded jwt token
+      //const jwtToken = JSON.parse(atob(this.data));
+
+      // set a timeout to refresh the token a minute before it expires
+      //const expires = new Date(jwtToken.exp * 1000);
+     //const expires = new Date(10 * 60 * 1000);
+      const timeout = 10 * 60 * 1000 - Date.now() - (60 * 1000);
+      this.refreshTokenTimeout = setTimeout(() => this.refreshToken(), timeout);
+  }
+
+  private stopRefreshTokenTimer() {
+      clearTimeout(this.refreshTokenTimeout);
+  }
+  // end
+
   refreshToken():void {
+    console.log("resfresh token is called");
 
     let httpOptions = {
       headers: new HttpHeaders({
@@ -69,6 +92,7 @@ export class LoginService {
       this.cookieService.set("access_token", result.access_token);
       this.cookieService.set("refresh_token", result.refresh_token);
       console.log(this.cookieService.get("access_token"));
+      this.startRefreshTokenTimer();
     });
   }
 
@@ -89,6 +113,7 @@ export class LoginService {
   }
 
   logout() {
+    this.stopRefreshTokenTimer();
     this.cookieService.deleteAll();
     this.route.navigate(['/']);
   }
