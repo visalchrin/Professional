@@ -20,6 +20,7 @@ export class NavigatorComponent implements OnInit {
     private cookieService: CookieService) { 
     this.btn = 'hamburger';
     this.isAuthenticated = loginService.isAuthenticated();
+
   }
 
 
