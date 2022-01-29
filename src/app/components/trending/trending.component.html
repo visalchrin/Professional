@@ -1,58 +1,98 @@
+<ngx-skeleton-loader *ngIf="loading"
+count="7"
+[theme]="{
+    'display': 'grid',
+    'grid-template-column': '1fr',
+    'margin': '0 auto',
+    'width': '700px',
+    'margin-top': '20px',
+  'border-radius': '5px',
+  height: '100px',
+  border: '1px solid white'
+}"
+></ngx-skeleton-loader>
+
 <div class="trending">
     <h1>Where you can see your future!</h1>
     <div class="trending-header">
         <p>Explore and learn more about the career trending, and prepare yourself to become one of the best expert in those fields.</p>
     </div>
-    <div class="trending-boxes">
+    <div class="trending-boxes" *ngFor="let j of jobs">
         <div class="trending-box">
             <div class="trending-box-img">
-                <img src="https://th.bing.com/th/id/OIP.zS3PSBRlY1_P1KSTBGAYAgHaE8?pid=ImgDet&rs=1" alt="Image">
+                <img src="{{j.juniorImage}}" alt="Image">
             </div>
             <div class="trending-box-desc">
-               <h5><span>Job Title: </span>Software Developer</h5>
-               <p><span>Experience: </span> Working with development team on develop, deploy and create new software solution.</p>
+               <h5><span>Job Title: </span>{{j.jobTitle}}</h5>
+               <p><span>Experience: </span>{{j.junior}}</p>
             </div>
             <div class="trending-box-level">
                 <h5>Junior</h5>
             </div>
             <div class="trending-box-salary">
-                <h5>$5000/month</h5>
+                <h5>${{j.juniorSalary}}/month</h5>
             </div>
         </div>
 
         <div class="trending-box">
             <div class="trending-box-img">
-                <img src="https://th.bing.com/th/id/OIP.zS3PSBRlY1_P1KSTBGAYAgHaE8?pid=ImgDet&rs=1" alt="Image">
+                <img src="{{j.seniorImage}}" alt="Image">
             </div>
             <div class="trending-box-desc">
-               <h5><span>Job Title: </span>Software Developer</h5>
-               <p><span>Experience: </span> Working with development team on develop, deploy and create new software solution.</p>
+               <h5><span>Job Title: </span>{{j.jobTitle}}</h5>
+               <p><span>Experience: </span>{{j.senior}}</p>
             </div>
             <div class="trending-box-level">
-                <h5>Junior</h5>
+                <h5>Senior</h5>
             </div>
             <div class="trending-box-salary">
-                <h5>$5000/month</h5>
+                <h5>${{j.seniorSalary}}/month</h5>
             </div>
         </div>
 
         <div class="trending-box">
             <div class="trending-box-img">
-                <img src="https://th.bing.com/th/id/OIP.zS3PSBRlY1_P1KSTBGAYAgHaE8?pid=ImgDet&rs=1" alt="Image">
+                <img src="{{j.expertImage}}" alt="Image">
             </div>
             <div class="trending-box-desc">
-               <h5><span>Job Title: </span>Software Developer</h5>
-               <p><span>Experience: </span> Working with development team on develop, deploy and create new software solution.</p>
+               <h5><span>Job Title: </span>{{j.jobTitle}}</h5>
+               <p><span>Experience: </span>{{j.expert}}</p>
             </div>
             <div class="trending-box-level">
-                <h5>Junior</h5>
+                <h5>Expert</h5>
             </div>
             <div class="trending-box-salary">
-                <h5>$5000/month</h5>
+                <h5>${{j.expertSalary}}/month</h5>
             </div>
         </div>
+    </div>
 
 
-        
+<!-- provide data section -->
+    <div class="Table-added-news">
+        <div class="table" style="margin-top: 30px;">
+            <table class="table caption-top">
+                <caption><h1>Spend with us 2 minutes to make a better future in Cambodia</h1></caption>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Job</th>
+                    <th scope="col">Industry</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let j of jobs;let indexOfelement=index;">
+                    <th scope="row">{{indexOfelement + 1}}</th>
+                    <td><p id="title" >{{j.jobTitle}}</p></td>
+                    <td><p id="content">{{j.industry}}</p></td>
+                    <td><a (click)="onClickInvolve(j.id)" style="color: red;">Involve</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="button">
+            <a routerLink="/createNewJob"><button id="button" type="button" class="btn btn-success">New Job</button></a>
+        </div>
     </div>
 </div>

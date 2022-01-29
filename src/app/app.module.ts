@@ -27,6 +27,8 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { EditInfoComponent } from './components/edit-info/edit-info.component';
+import { CreateJobComponent } from './components/create-job/create-job.component';
+import { InvolveComponent } from './components/involve/involve.component';
 
 
 const routes: Routes = [
@@ -44,7 +46,9 @@ const routes: Routes = [
   { path: 'profile/:username', component: ProfileComponent},
   { path: 'search/:query', component: SearchComponent},
   { path: 'newsDetail/:id', component: NewsDetailComponent},
-  { path: 'trending', component: TrendingComponent}
+  { path: 'trending', component: TrendingComponent},
+  { path: 'createNewJob', component: CreateJobComponent},
+  { path: 'involve/:jobId', component: InvolveComponent}
 ]
 
 
@@ -67,6 +71,8 @@ const routes: Routes = [
     CustomMarkdownPipe,
     TrendingComponent,
     EditInfoComponent,
+    CreateJobComponent,
+    InvolveComponent,
   ],
   imports: [
     BrowserModule,

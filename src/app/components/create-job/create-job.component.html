@@ -1,0 +1,16 @@
+<div class="container">
+    <form action="" class="container-form" [formGroup]="formCreateJob">
+      <h1>Publish New Job</h1>
+      <input type="text" placeholder="Job Title" name="titleTitle" formControlName="jobTitle">
+      <input type="text" name="industry" id="" placeholder="Industry" name="image" formControlName="industry">
+      <input type="text" name="image" id="" placeholder="Image For Junior" name="image" formControlName="imageJunior">
+      <textarea name="content" id="" cols="30" rows="5" placeholder="Junior experience required" formControlName="junior"></textarea>
+      <input type="text" name="image" id="" placeholder="Image For Senior" name="image" formControlName="imageSenior">
+      <textarea name="content" id="" cols="30" rows="5" placeholder="Senior experience required" formControlName="senior"></textarea>
+      <input type="text" name="image" id="" placeholder="Image For Expert" name="image" formControlName="imageExpert">
+      <textarea name="content" id="" cols="30" rows="5" placeholder="Expert experience required" formControlName="expert"></textarea>
+
+
+      <button (click)="onCreateJob()">Publish</button>
+    </form>
+  </div>

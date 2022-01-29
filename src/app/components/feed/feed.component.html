@@ -1,4 +1,18 @@
-<div class="newpost" (click)="openModal(template)">
+<ngx-skeleton-loader *ngIf="loading"
+    count="7"
+    [theme]="{
+        'display': 'grid',
+        'grid-template-column': '1fr',
+        'margin': '0 auto',
+        'width': '700px',
+        'margin-top': '20px',
+      'border-radius': '5px',
+      height: '100px',
+      border: '1px solid white'
+    }"
+  ></ngx-skeleton-loader>
+
+<div *ngIf="!loading" class="newpost" (click)="openModal(template)">
     <div class="newpost-owner">
         <div class="post-owner-profile">
             <img src="{{user.profile}}" alt="user-profile">
@@ -24,18 +38,5 @@
       </ng-template>
 </div>
 
-<ngx-skeleton-loader *ngIf="loading"
-    count="7"
-    [theme]="{
-        'display': 'grid',
-        'grid-template-column': '1fr',
-        'margin': '0 auto',
-        'width': '700px',
-        'margin-top': '20px',
-      'border-radius': '5px',
-      height: '100px',
-      border: '1px solid white'
-    }"
-  ></ngx-skeleton-loader>
 
 <app-post [posts]="posts"></app-post>

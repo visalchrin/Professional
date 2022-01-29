@@ -1,0 +1,26 @@
+<div class="container">
+
+  <ngx-skeleton-loader *ngIf="loading"
+  count="7"
+  [theme]="{
+      'display': 'grid',
+      'grid-template-column': '1fr',
+      'margin': '0 auto',
+      'width': '700px',
+      'margin-top': '20px',
+    'border-radius': '5px',
+    height: '100px',
+    border: '1px solid white'
+  }"
+></ngx-skeleton-loader>
+
+    <form action="" class="container-form" [formGroup]="formInvolve" (ngSubmit)="onPublish('id')">
+      <h1>Provide us real data</h1>
+      <h3>Note: provide us only real data to keep our data accurately.</h3>
+      <h2 style="color: black; padding-top: 10px; font-size: 1.5rem">{{job.jobTitle}}</h2>
+      <input type="number" placeholder="Junior Salary Base" name="juniorSalary" formControlName="juniorSalary">
+      <input type="number" placeholder="Senior Salary Base" name="seniorSalary" formControlName="seniorSalary">
+      <input type="number" placeholder="Expert Salary Base" name="expertSalary" formControlName="expertSalary">
+      <button (click)="onPublish(job.id)">Publish</button>
+    </form>
+  </div>

@@ -25,6 +25,11 @@ export class FeedComponent implements OnInit {
     private cookieService: CookieService) {
     this.formPost = fb.group({
       content: new FormControl(null)
+    });
+
+    this.userService.getUserDetailInfo(this.cookieService.get("username")).subscribe((data)=>{
+      this.user = data;
+      //this.loading = false;
     })
 
     this.postService.getAllPostFromFollowing().subscribe((result: any) => {
@@ -32,9 +37,6 @@ export class FeedComponent implements OnInit {
       this.loading = false;
     });
 
-    this.userService.getUserDetailInfo(this.cookieService.get("username")).subscribe((data)=>{
-      this.user = data;
-    })
   }
 
   ngOnInit(): void {
