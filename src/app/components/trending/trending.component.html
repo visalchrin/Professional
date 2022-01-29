@@ -86,12 +86,12 @@ count="7"
                     <th scope="row">{{indexOfelement + 1}}</th>
                     <td><p id="title" >{{j.jobTitle}}</p></td>
                     <td><p id="content">{{j.industry}}</p></td>
-                    <td><a (click)="onClickInvolve(j.id)" style="color: red;">Involve</a></td>
+                    <td><a (click)="onClickInvolve(j.id)" style="color: green; text-decoration: underline;">Involve</a></td>
                   </tr>
                 </tbody>
               </table>
         </div>
-        <div class="button">
+        <div class="button" style="margin: 20px;">
             <a routerLink="/createNewJob"><button id="button" type="button" class="btn btn-success">New Job</button></a>
         </div>
     </div>

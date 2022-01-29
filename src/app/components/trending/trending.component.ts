@@ -23,6 +23,11 @@ export class TrendingComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.loading = true;
+    this.jobService.getAllJobs().subscribe((data: any) => {
+      this.jobs = data;
+      this.loading = false;
+    })
   }
 
   onClickInvolve(jobId: String) {
