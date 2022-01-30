@@ -38,5 +38,9 @@
       </ng-template>
 </div>
 
+<div *ngIf="newUser" class="newUser">
+  <h1>Follow our talents to get update and stay connect with them.</h1>
+  <button (click)="onfindNow()">Find them Now</button>
+</div>
 
 <app-post [posts]="posts"></app-post>

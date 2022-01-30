@@ -84,4 +84,18 @@ export class NewsService {
     );
   }
 
+  getAllNewsByUsername(data: any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.post(
+      "https://professional-career.herokuapp.com/api/news/getAllNewsByUsername",
+      data,
+      httpOptions
+    );
+  }
+
 }

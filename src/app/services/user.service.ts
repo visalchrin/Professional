@@ -7,8 +7,6 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class UserService {
-
-  // url: string = "http://localhost:9093/api/users";
   url: string = "https://professional-career.herokuapp.com/api/profile?username=";
 
   constructor(
@@ -53,6 +51,19 @@ export class UserService {
     };
     return this.http.get(
       `https://professional-career.herokuapp.com/api/getUserById?id=${id}`,
+      httpOptions
+    );
+  }
+
+  getAllUsers() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.cookieService.get('access_token')}`
+      }),
+    };
+    return this.http.get(
+      `https://professional-career.herokuapp.com/api/getAllUsers`,
       httpOptions
     );
   }

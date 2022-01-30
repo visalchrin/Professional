@@ -1,3 +1,5 @@
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 import { NewsService } from './../../services/news.service';
 import { Component } from '@angular/core';
 
@@ -11,9 +13,11 @@ export class BoNewsCareerComponent {
   loading: boolean = true;
 
   constructor(
-    private newsService: NewsService
+    private newsService: NewsService,
+    private router: Router,
+    private cookieService: CookieService
   ) {
-    this.newsService.getAllNews().subscribe((articles) => {
+    this.newsService.getAllNewsByUsername({username: this.cookieService.get("username")}).subscribe((articles) => {
       this.articles = articles;
       this.loading = false;
       console.log(articles);
@@ -24,6 +28,10 @@ export class BoNewsCareerComponent {
     this.newsService.deleteNewsById({id: newsId}).subscribe((data) => {
       this.articles = this.articles.filter((n: any) => n.id != newsId);
     });
+  }
+
+  onClickDetail(newsId: string) {
+    this.router.navigate([`newsDetail/${newsId}`]);
   }
   
 }

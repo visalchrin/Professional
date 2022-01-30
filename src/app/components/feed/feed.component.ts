@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { PostService } from './../../services/post.service';
@@ -15,10 +16,12 @@ export class FeedComponent implements OnInit {
   formPost: FormGroup;
   posts: any;
   loading:boolean = true;
+  newUser: boolean = false;
   user: any;
   
   constructor(
     private modalService: BsModalService,
+    private router: Router,
     private fb: FormBuilder,
     private postService: PostService,
     private userService: UserService,
@@ -34,6 +37,9 @@ export class FeedComponent implements OnInit {
 
     this.postService.getAllPostFromFollowing().subscribe((result: any) => {
       this.posts = result;
+      if (result.length == 0) {
+        this.newUser = true;
+      }
       this.loading = false;
     });
 
@@ -60,5 +66,9 @@ export class FeedComponent implements OnInit {
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+  }
+
+  onfindNow() {
+    this.router.navigate(["/talents"]);
   }
 }

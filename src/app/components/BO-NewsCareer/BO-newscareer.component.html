@@ -31,9 +31,9 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let a of articles;let indexOfelement=index;">
-                    <th scope="row">{{indexOfelement + 1}}</th>
-                    <td><p id="title" >{{a.title}}</p></td>
-                    <td><p id="content">{{a.content}}</p></td>
+                    <th (click)="onClickDetail(a.id)" scope="row">{{indexOfelement + 1}}</th>
+                    <td (click)="onClickDetail(a.id)" ><p id="title" >{{a.title}}</p></td>
+                    <td (click)="onClickDetail(a.id)" ><p id="content">{{a.content}}</p></td>
                     <td><a (click)="onDeleteNews(a.id)" style="color: red;">Delete</a></td>
                   </tr>
                 </tbody>

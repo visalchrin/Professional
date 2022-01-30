@@ -6,7 +6,8 @@
         <li><img class="menuBtn showMobile hide-desktop" (click)="onClickShowMenu()" src="../../../assets/{{btn}}.svg" alt="close btn"></li>
         <li class="header-navbar-item"><a routerLink="/feed" routerLinkActive="header-active">Community</a></li>
         <li class="header-navbar-item"><a routerLink="/trending" routerLinkActive="header-active" >Trending</a></li>
-        <li class="header-navbar-item"><a routerLink="/BO-NewsCareer" routerLinkActive="header-active" >BO-News</a></li>
+        <li class="header-navbar-item"><a routerLink="/talents" routerLinkActive="header-active" >Talents</a></li>
+        <li class="header-navbar-item"><a routerLink="/BO-NewsCareer" routerLinkActive="header-active" >Reporter</a></li>
         <li class="header-navbar-item"><a routerLink="/News-Career" routerLinkActive="header-active" >News</a></li>
         <li class="header-navbar-item"><a (click)="onClickProfile()" routerLinkActive="header-active">Profile</a></li>
         <li class="header-navbar-item">
@@ -36,7 +37,8 @@
     <ol class=" mobile-menu hide-desktop" [ngClass]="{'show-mobile': showMobileMenu}" *ngIf="isAuthenticated; else notAuthenticatedMobile">
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/feed" routerLinkActive="active">Community</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/trending" routerLinkActive="active">trending</a></li>
-        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/BO-NewsCareer" routerLinkActive="active">Bo-News</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/talents" routerLinkActive="active">Talents</a></li>
+        <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/BO-NewsCareer" routerLinkActive="active">Reporter</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate()" routerLink="/News-Career" routerLinkActive="active">News</a></li>
         <li class="header-navbar-item"><a (click)="OnNavigate(); onClickProfile();"  routerLinkActive="active">Profile</a></li>
         <li class="header-navbar-item">

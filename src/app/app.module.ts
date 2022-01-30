@@ -1,3 +1,4 @@
+import { AuthGuardService } from './services/auth-guard.service';
 import { FormBoNewsCareerComponent } from './components/Form-Bo-Newscareer/Form-BO-Newscareer.component';
 import { BoNewsCareerComponent } from './components/BO-NewsCareer/BO-newscareer.component';
 import { NewsCareerComponent } from './components/News-Career/news-career.component';
@@ -29,6 +30,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { EditInfoComponent } from './components/edit-info/edit-info.component';
 import { CreateJobComponent } from './components/create-job/create-job.component';
 import { InvolveComponent } from './components/involve/involve.component';
+import { PeopleComponent } from './components/people/people.component';
 
 
 const routes: Routes = [
@@ -37,18 +39,19 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'feed', component: FeedComponent},
+  { path: 'feed', canActivate: [AuthGuardService], component: FeedComponent},
   { path: 'about-us', component: AboutUsComponent},
-  { path: 'News-Career', component: NewsCareerComponent},
-  { path: 'BO-NewsCareer', component: BoNewsCareerComponent},
-  { path: 'Form-BO-Newscareer', component: FormBoNewsCareerComponent},
-  { path: 'profile/edit', component: EditInfoComponent},
-  { path: 'profile/:username', component: ProfileComponent},
-  { path: 'search/:query', component: SearchComponent},
-  { path: 'newsDetail/:id', component: NewsDetailComponent},
-  { path: 'trending', component: TrendingComponent},
-  { path: 'createNewJob', component: CreateJobComponent},
-  { path: 'involve/:jobId', component: InvolveComponent}
+  { path: 'News-Career', canActivate: [AuthGuardService], component: NewsCareerComponent},
+  { path: 'BO-NewsCareer', canActivate: [AuthGuardService], component: BoNewsCareerComponent},
+  { path: 'Form-BO-Newscareer', canActivate: [AuthGuardService],component: FormBoNewsCareerComponent},
+  { path: 'profile/edit', canActivate: [AuthGuardService], component: EditInfoComponent},
+  { path: 'profile/:username',canActivate: [AuthGuardService], component: ProfileComponent},
+  { path: 'search/:query', canActivate: [AuthGuardService], component: SearchComponent},
+  { path: 'newsDetail/:id', canActivate: [AuthGuardService], component: NewsDetailComponent},
+  { path: 'trending', canActivate: [AuthGuardService], component: TrendingComponent},
+  { path: 'createNewJob', canActivate: [AuthGuardService], component: CreateJobComponent},
+  { path: 'involve/:jobId', canActivate: [AuthGuardService], component: InvolveComponent},
+  { path: 'talents', canActivate: [AuthGuardService], component: PeopleComponent}
 ]
 
 
@@ -73,6 +76,7 @@ const routes: Routes = [
     EditInfoComponent,
     CreateJobComponent,
     InvolveComponent,
+    PeopleComponent,
   ],
   imports: [
     BrowserModule,
