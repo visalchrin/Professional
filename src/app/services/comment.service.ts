@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class CommentService {
 
-  private url = "http://localhost:9093/api/comment";
+  private url = "https://professional-career.herokuapp.com/api/comment";
 
   constructor(
     private http: HttpClient,

@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class UserService {
 
   // url: string = "http://localhost:9093/api/users";
-  url: string = "http://localhost:9093/api/profile?username=";
+  url: string = "https://professional-career.herokuapp.com/api/profile?username=";
 
   constructor(
     private cookieService: CookieService,
@@ -25,7 +25,7 @@ export class UserService {
       }),
     };
     return this.http.post(
-      "http://localhost:9093/api/profile/edit",
+      "https://professional-career.herokuapp.com/api/profile/edit",
       data,
       httpOptions
     );
@@ -52,7 +52,7 @@ export class UserService {
       }),
     };
     return this.http.get(
-      `http://localhost:9093/api/getUserById?id=${id}`,
+      `https://professional-career.herokuapp.com/api/getUserById?id=${id}`,
       httpOptions
     );
   }

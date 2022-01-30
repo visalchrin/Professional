@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 })
 export class NewsService {
 
-  url: string = "http://localhost:9093/api/";
+  url: string = "https://professional-career.herokuapp.com/api/";
   constructor(
     private http: HttpClient,
     private cookieService: CookieService
@@ -78,7 +78,7 @@ export class NewsService {
       }),
     };
     return this.http.post(
-      "http://localhost:9093/api/news/delete",
+      "https://professional-career.herokuapp.com/api/news/delete",
       data,
       httpOptions
     );

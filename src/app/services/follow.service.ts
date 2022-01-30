@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class FollowService {
 
-  private url = "http://localhost:9093/api/follow";
+  private url = "https://professional-career.herokuapp.com/api/follow";
 
   constructor(
     private http: HttpClient,

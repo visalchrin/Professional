@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class JobService {
-  private url = "http://localhost:9093/api/job";
+  private url = "https://professional-career.herokuapp.com/api/job";
 
   constructor(
     private http: HttpClient,

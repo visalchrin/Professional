@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class SearchService {
 
-  private url = "http://localhost:9093/api/search";
+  private url = "https://professional-career.herokuapp.com/api/search";
 
   constructor(
     private cookieService: CookieService,

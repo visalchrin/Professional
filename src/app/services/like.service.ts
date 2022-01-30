@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LikeService {
-  private url = "http://localhost:9093/api/like";
+  private url = "https://professional-career.herokuapp.com/api/like";
 
   constructor(
     private cookieService: CookieService,

@@ -10,7 +10,7 @@ import { User } from '../Models/userModel';
 export class LoginService {
   @Output() isAuthenticatedEvent : EventEmitter<any> = new EventEmitter();
 
-  url: string = "http://localhost:9093/api";
+  url: string = "https://professional-career.herokuapp.com/api";
   data: any;
 
   constructor(

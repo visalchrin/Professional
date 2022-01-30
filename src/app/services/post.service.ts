@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class PostService {
 
-  url: string = "http://localhost:9093/api/";
+  url: string = "https://professional-career.herokuapp.com/api/";
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,

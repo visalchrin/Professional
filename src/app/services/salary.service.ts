@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class SalaryService {
 
-  private url = "http://localhost:9093/api/salary";
+  private url = "https://professional-career.herokuapp.com/api/salary";
 
   constructor(
     private http: HttpClient,
